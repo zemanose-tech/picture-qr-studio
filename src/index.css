@@ -8,41 +8,35 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+  /* IMG Academy Brand Colors - Exact Match */
+  --img-blue: 210 100% 36%; /* #0057B8 - IMG Academy Primary Blue */
+  --img-blue-dark: 210 100% 28%; /* Darker blue for hover states */
+  --img-blue-light: 210 100% 90%; /* Light blue for backgrounds */
+  --img-white: 0 0% 100%; /* Pure white */
+  --img-gray: 210 20% 95%; /* Light gray backgrounds */
+  --img-gray-dark: 210 10% 20%; /* Dark gray text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 258 90% 66%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 258 90% 66%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 258 90% 66%;
-
-    --radius: 0.75rem;
-
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(258 90% 66%), hsl(280 100% 70%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14.3% 95.9%));
-    --shadow-elegant: 0 10px 30px -10px hsl(258 90% 66% / 0.3);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Base colors using IMG Academy theme */
+  --background: 0 0% 100%;
+  --foreground: 210 10% 20%;
+  --card: 0 0% 100%;
+  --card-foreground: 210 10% 20%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 210 10% 20%;
+  --primary: 210 100% 36%; /* IMG Blue */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 20% 95%;
+  --secondary-foreground: 210 10% 20%;
+  --muted: 210 20% 95%;
+  --muted-foreground: 210 10% 46%;
+  --accent: 210 100% 90%;
+  --accent-foreground: 210 100% 36%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 210 100% 36%;
+  --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
