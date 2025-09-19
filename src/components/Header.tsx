@@ -35,10 +35,7 @@ const Header = () => {
                 </Link>
               </div>}
           </div>
-          <button 
-            onClick={() => setIsModalOpen(true)}
-            className="text-white hover:text-white/80 transition-colors"
-          >
+          <button onClick={() => setIsModalOpen(true)} className="text-white hover:text-white/80 transition-colors">
             Contacto
           </button>
           
@@ -67,28 +64,19 @@ const Header = () => {
               <Link to="/sports" className="text-white hover:text-white/80 transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Deportes
               </Link>
-              <button 
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  setIsModalOpen(true);
-                }}
-                className="text-white hover:text-white/80 transition-colors text-left"
-              >
+              <button onClick={() => {
+            setIsMenuOpen(false);
+            setIsModalOpen(true);
+          }} className="text-white hover:text-white/80 transition-colors text-left">
                 Contacto
               </button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary w-fit">
-                #AddMoreAthletes
-              </Button>
+              
             </nav>
           </div>}
       </div>
       
       {/* Inquiry Modal */}
-      <InquiryModal 
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        inquiryType="Contacto General"
-      />
+      <InquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} inquiryType="Contacto General" />
     </header>;
 };
 export default Header;
