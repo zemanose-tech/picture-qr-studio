@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
@@ -52,12 +53,8 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contacto directo</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-center">
-                <Phone className="w-4 h-4 mr-2 text-accent" />
-                <span className="text-primary-foreground/80">+57 123 456 7890</span>
-              </div>
-              <div className="flex items-center">
                 <Mail className="w-4 h-4 mr-2 text-accent" />
-                <span className="text-primary-foreground/80">admisiones.latam@imgacademy.com</span>
+                <span className="text-primary-foreground/80">comercial@sportsacademy.co</span>
               </div>
               
             </div>
@@ -76,14 +73,16 @@ const Footer = () => {
             <p>&copy; 2025 IMG Academy. Todos los derechos reservados.</p>
             <p>Representante autorizado para Latinoamérica - Programa de Referencias Global</p>
           </div>
-          
+
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">
+            <Link
+              to="/privacy"
+              className="text-primary-foreground/80 hover:text-accent transition-colors"
+            >
               Política de Privacidad
-            </a>
-            
-            
+            </Link>
           </div>
+
         </div>
         
         <div className="mt-4 pt-4 border-t border-white/20 text-center">

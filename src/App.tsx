@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Camps from "./pages/Camps";
 import Boarding from "./pages/Boarding";
 import Facilities from "./pages/Facilities";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/camps" element={<Camps />} />
           <Route path="/boarding" element={<Boarding />} />
           <Route path="/facilities" element={<Facilities />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

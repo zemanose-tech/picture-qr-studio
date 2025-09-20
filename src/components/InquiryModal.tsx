@@ -13,60 +13,95 @@ interface InquiryModalProps {
   inquiryType?: string;
 }
 const countries = [{
+  code: "CL",
+  name: "Chile",
+  flag: "🇨🇱",
+  phoneCode: "+56"
+}, {
   code: "CO",
   name: "Colombia",
   flag: "🇨🇴",
   phoneCode: "+57"
-}, {
-  code: "ES",
-  name: "España",
-  flag: "🇪🇸",
-  phoneCode: "+34"
-}, {
-  code: "PA",
-  name: "Panamá",
-  flag: "🇵🇦",
-  phoneCode: "+507"
 }, {
   code: "CR",
   name: "Costa Rica",
   flag: "🇨🇷",
   phoneCode: "+506"
 }, {
+  code: "EC",
+  name: "Ecuador",
+  flag: "🇪🇨",
+  phoneCode: "+593"
+}, {
+  code: "SV",
+  name: "El Salvador",
+  flag: "🇸🇻",
+  phoneCode: "+503"
+}, {
+  code: "AE",
+  name: "Emiratos Árabes",
+  flag: "🇦🇪",
+  phoneCode: "+971"
+}, {
+  code: "ES",
+  name: "España",
+  flag: "🇪🇸",
+  phoneCode: "+34"
+}, {
+  code: "US",
+  name: "Estados Unidos",
+  flag: "🇺🇸",
+  phoneCode: "+1"
+}, {
+  code: "GT",
+  name: "Guatemala",
+  flag: "🇬🇹",
+  phoneCode: "+502"
+}, {
+  code: "HN",
+  name: "Honduras",
+  flag: "🇭🇳",
+  phoneCode: "+504"
+}, {
+  code: "JO",
+  name: "Jordania",
+  flag: "🇯🇴",
+  phoneCode: "+962"
+}, {
   code: "MX",
   name: "México",
   flag: "🇲🇽",
   phoneCode: "+52"
 }, {
-  code: "AR",
-  name: "Argentina",
-  flag: "🇦🇷",
-  phoneCode: "+54"
+  code: "NI",
+  name: "Nicaragua",
+  flag: "🇳🇮",
+  phoneCode: "+505"
 }, {
-  code: "CL",
-  name: "Chile",
-  flag: "🇨🇱",
-  phoneCode: "+56"
+  code: "PA",
+  name: "Panamá",
+  flag: "🇵🇦",
+  phoneCode: "+507"
 }, {
   code: "PE",
   name: "Perú",
   flag: "🇵🇪",
   phoneCode: "+51"
 }, {
-  code: "EC",
-  name: "Ecuador",
-  flag: "🇪🇨",
-  phoneCode: "+593"
+  code: "PT",
+  name: "Portugal",
+  flag: "🇵🇹",
+  phoneCode: "+351"
 }, {
-  code: "VE",
-  name: "Venezuela",
-  flag: "🇻🇪",
-  phoneCode: "+58"
+  code: "CH",
+  name: "Suiza",
+  flag: "🇨🇭",
+  phoneCode: "+41"
 }, {
-  code: "US",
-  name: "Estados Unidos",
-  flag: "🇺🇸",
-  phoneCode: "+1"
+  code: "TT",
+  name: "Trinidad y Tobago",
+  flag: "🇹🇹",
+  phoneCode: "+1-868"
 }, {
   code: "OTHER",
   name: "Otro país",
@@ -163,9 +198,8 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                 <div className="flex items-center gap-3 p-3 bg-background rounded-md">
                   <MessageSquare className="w-5 h-5 text-green-600" />
                   <div>
-                    <p className="font-medium">WhatsApp</p>
-                    <a href="https://wa.me/573001234567" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">
-                      +57 300 123 4567
+                    <a href="https://wa.me/34619463416" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">
+                      <p className="font-medium">WhatsApp</p>
                     </a>
                   </div>
                 </div>
@@ -174,8 +208,8 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                   <Mail className="w-5 h-5 text-blue-600" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:nloaiza@sportsacademy.co" className="text-sm text-muted-foreground hover:text-primary">
-                      nloaiza@sportsacademy.co
+                    <a href="mailto:comercial@sportsacademy.co" className="text-sm text-muted-foreground hover:text-primary">
+                      comercial@sportsacademy.co
                     </a>
                   </div>
                 </div>

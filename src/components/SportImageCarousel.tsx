@@ -96,6 +96,15 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
         alt: `Instalaciones de Programas de Adultos ${i + 1}`
       }));
     }
+
+    if (sportName === "Softball") {
+      // Softball carousel images (7 images)
+      return Array.from({ length: 7 }, (_, i) => ({
+        id: i + 1,
+        image: `/carousel_images/softball_carousel/${i + 1}.jpg`,
+        alt: `Instalaciones de Softball ${i + 1}`
+      }));
+    }
     
     // Default fallback for other sports
     return Array.from({ length: 5 }, (_, i) => ({

@@ -41,29 +41,6 @@ Con una metodología de instrucción probada, los golfistas de IMG Academy se co
 
 Nuestros campamentos están dirigidos a jóvenes de 8 a 18 años, con programas personalizables para todos los niveles de habilidad y disponibilidad durante todo el año, adaptándose a tu calendario.`
   },
-  football: {
-    name: "Fútbol Americano",
-    hero: footballImage,
-    description: `Hay una razón por la que el programa de fútbol americano de IMG Academy es reconocido como el mejor del país. Entrenadores de élite y una metodología de entrenamiento comprobada hacen posible que cada atleta maximice su potencial.
-
-Este mismo enfoque convierte a los campamentos de fútbol americano de IMG en líderes de la industria para todas las posiciones, con un entrenamiento centrado en el desarrollo integral del jugador.
-
-Dirigidos a jóvenes de 10 a 18 años, nuestros campamentos ofrecen programas personalizables para todos los niveles y están disponibles durante todo el año, adaptándose a tu calendario.`
-  },
-  basketball: {
-    name: "Baloncesto",
-    hero: basketballImage,
-    description: `No importa tu nivel de habilidad, en IMG Academy encontrarás un campamento de baloncesto diseñado para alcanzar tus metas. Nuestros programas incluyen opciones de entrenamiento personalizado y especializaciones enfocadas en áreas clave como el rendimiento mental o el liderazgo.
-
-Guiados por entrenadores de talla mundial, en un campus integral de primer nivel, los campamentos de verano de baloncesto de IMG Academy combinan entrenamientos en grupo, trabajo de habilidades específicas por posición y escenarios de juego reales para llevar tu desempeño al siguiente nivel.`
-  },
-  baseball: {
-    name: "Béisbol",
-    hero: baseballImage,
-    description: `El programa de béisbol de IMG Academy ofrece una metodología integral para formar al estudiante-atleta completo. Los jugadores acceden a instalaciones y equipos de última generación, entrenadores inigualables, acompañamiento constante y una comunidad apasionada y motivadora.
-
-Con múltiples equipos organizados por edad y nivel de habilidad, cada atleta comprometido encuentra la oportunidad perfecta para maximizar su potencial y llevar su juego al siguiente nivel.`
-  },
   soccer: {
     name: "Fútbol",
     hero: soccerImage,
@@ -71,24 +48,12 @@ Con múltiples equipos organizados por edad y nivel de habilidad, cada atleta co
 
 Dirigidos a jóvenes de 10 a 18 años, los programas son totalmente personalizables y están disponibles durante todo el año, ajustándose a tu calendario y necesidades.`
   },
-  lacrosse: {
-    name: "Lacrosse",
-    hero: lacrosseImage,
-    description: `Los campamentos de lacrosse de IMG Academy representan el mejor programa de entrenamiento del país. Gracias a la combinación de entrenamiento específico por posición, conceptos de equipo aplicados en situaciones reales de juego y un enfoque integral de desarrollo, cada atleta encuentra aquí la oportunidad de llevar su rendimiento al máximo nivel.
+  basketball: {
+    name: "Baloncesto",
+    hero: basketballImage,
+    description: `No importa tu nivel de habilidad, en IMG Academy encontrarás un campamento de baloncesto diseñado para alcanzar tus metas. Nuestros programas incluyen opciones de entrenamiento personalizado y especializaciones enfocadas en áreas clave como el rendimiento mental o el liderazgo.
 
-Dirigidos a jóvenes de 10 a 18 años, nuestros campamentos ofrecen programas personalizables para todos los niveles de habilidad y están disponibles durante todo el año, adaptándose a tu calendario.`
-  },
-  track: {
-    name: "Atletismo",
-    hero: trackImage,
-    description: `El programa de atletismo de IMG Academy ofrece entrenamiento específico por disciplina para saltadores, velocistas, decatletas, vallistas, lanzadores, garrochistas y corredores de medio fondo, fondo y campo traviesa, siguiendo un calendario de competencia anual.
-
-Con una metodología única y comprobada, basada en el desarrollo intencional de la capacidad de aprendizaje, la concentración y la resiliencia, cada estudiante-atleta fortalece sus habilidades y se siente preparado y seguro para rendir al máximo nivel.`
-  },
-  wrestling: {
-    name: "Lucha",
-    hero: wrestlingImage,
-    description: `Programa de lucha con técnicas tradicionales y modernas para competencia de élite.`
+Guiados por entrenadores de talla mundial, en un campus integral de primer nivel, los campamentos de baloncesto de IMG Academy combinan entrenamientos en grupo, trabajo de habilidades específicas por posición y escenarios de juego reales para llevar tu desempeño al siguiente nivel.`
   },
   volleyball: {
     name: "Voleibol",
@@ -98,6 +63,13 @@ Con una metodología única y comprobada, basada en el desarrollo intencional de
 Diseñados para todos los niveles de habilidad, nuestros campamentos incluyen dos sesiones diarias en cancha y la opción de enfocarse en especializaciones clave como rendimiento mental o liderazgo.
 
 Además, incorporan entrenamiento específico por posición y escenarios competitivos que preparan a los jugadores para destacar en la cancha y más allá.`
+  },
+  track: {
+    name: "Atletismo",
+    hero: trackImage,
+    description: `El programa de atletismo de IMG Academy ofrece entrenamiento específico por disciplina para saltadores, velocistas, decatletas, vallistas, lanzadores, garrochistas y corredores de medio fondo, fondo y campo traviesa, siguiendo un calendario de competencia anual.
+
+Con una metodología única y comprobada, basada en el desarrollo intencional de la capacidad de aprendizaje, la concentración y la resiliencia, cada estudiante-atleta fortalece sus habilidades y se siente preparado y seguro para rendir al máximo nivel.`
   },
   performance: {
     name: "Performance",
@@ -115,14 +87,37 @@ Dirigidos a jóvenes de 12 a 18 años, estos campamentos están diseñados para 
 
 Disponibles durante todo el año, para adaptarse a tu calendario.`
   },
+  football: {
+    name: "Fútbol Americano",
+    hero: footballImage,
+    description: `Hay una razón por la que el programa de fútbol americano de IMG Academy es reconocido como el mejor del país. Entrenadores de élite y una metodología de entrenamiento comprobada hacen posible que cada atleta maximice su potencial.
+
+Este mismo enfoque convierte a los campamentos de fútbol americano de IMG en líderes de la industria para todas las posiciones, con un entrenamiento centrado en el desarrollo integral del jugador.
+
+Dirigidos a jóvenes de 10 a 18 años, nuestros campamentos ofrecen programas personalizables para todos los niveles y están disponibles durante todo el año, adaptándose a tu calendario.`
+  },
+  baseball: {
+    name: "Béisbol",
+    hero: baseballImage,
+    description: `El programa de béisbol de IMG Academy ofrece una metodología integral para formar al estudiante-atleta completo. Los jugadores acceden a instalaciones y equipos de última generación, entrenadores inigualables, acompañamiento constante y una comunidad apasionada y motivadora.
+
+Con múltiples equipos organizados por edad y nivel de habilidad, cada atleta comprometido encuentra la oportunidad perfecta para maximizar su potencial y llevar su juego al siguiente nivel.`
+  },
   softball: {
-    name: "Sóftbol",
+    name: "Softball",
     hero: softballImage,
     description: `¡Sé parte de nuestro año inaugural y vive la experiencia del innovador programa de sóftbol de IMG Academy!
 
 Nuestro programa de sóftbol prioriza el desarrollo de cada estudiante-atleta, garantizando un crecimiento tanto integral como personalizado. Nuestros entrenadores expertos adaptan el entrenamiento a la posición, necesidades, objetivos y nivel actual de cada jugadora.
 
 La progresión a lo largo del año refleja la de un programa profesional, lo que permite a las atletas enfocarse en lo que más importa en cada temporada y llegar confiadas y preparadas antes de competir a nivel universitario.`
+  },
+  lacrosse: {
+    name: "Lacrosse",
+    hero: lacrosseImage,
+    description: `Los campamentos de lacrosse de IMG Academy representan el mejor programa de entrenamiento del país. Gracias a la combinación de entrenamiento específico por posición, conceptos de equipo aplicados en situaciones reales de juego y un enfoque integral de desarrollo, cada atleta encuentra aquí la oportunidad de llevar su rendimiento al máximo nivel.
+
+Dirigidos a jóvenes de 10 a 18 años, nuestros campamentos ofrecen programas personalizables para todos los niveles de habilidad y están disponibles durante todo el año, adaptándose a tu calendario.`
   }
 };
 const SportDetail = () => {
@@ -138,10 +133,15 @@ const SportDetail = () => {
   if (!sport) {
     return <div>Deporte no encontrado - SportId: {sportId}</div>;
   }
+
+  const isVolleyball =
+    sport === "volleyball" || sport?.name?.toLowerCase() === "voleibol";
+
   return <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main className="pt-20">
         {/* Image Carousel Hero Section */}
+        {!isVolleyball && (
         <section className="relative py-12 bg-gray-100">
           <div className="container mx-auto px-4">
             <div className="mb-6">
@@ -153,6 +153,26 @@ const SportDetail = () => {
             <SportImageCarousel sportName={sport.name} />
           </div>
         </section>
+        )}
+        {isVolleyball && (
+        <section className="relative overflow-hidden">
+          <div className="aspect-video w-full">
+            <div className="mb-6">
+              <Link to="/sports" className="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Volver a Deportes
+              </Link>
+            </div>
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/3J_aX6At-fQ?autoplay=1&mute=0&loop=1&controls=0&playlist=3J_aX6At-fQ&modestbranding=1&rel=0&showinfo=0"
+              title="IMG Academy Volleyball"
+              allow="autoplay; encrypted-media"
+              allowFullScreen/>
+          </div>
+        </section>
+        )}
+
 
         {/* Main Hero Section */}
         <section className="relative py-20 bg-primary">

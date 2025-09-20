@@ -34,11 +34,11 @@ const sportsPrograms = [{
   image: golfImage,
   highlights: ["Campo de 18 hoyos", "Driving range", "Putting green", "Short game area"]
 }, {
-  id: "football",
-  name: "Fútbol Americano",
-  description: "Entrenamiento completo para futuros atletas universitarios",
-  image: footballImage,
-  highlights: ["Campo de práctica", "Sala de pesas", "Análisis táctico", "Preparación para becas"]
+  id: "soccer",
+  name: "Fútbol",
+  description: "Entrenamiento técnico y táctico del fútbol moderno",
+  image: soccerImage,
+  highlights: ["Campos de césped natural", "Entrenamiento táctico", "Preparación física", "Scout universitario"]
 }, {
   id: "basketball",
   name: "Baloncesto",
@@ -46,23 +46,11 @@ const sportsPrograms = [{
   image: basketballImage,
   highlights: ["Gimnasios profesionales", "Entrenamiento individual", "Scrimmages competitivos", "Desarrollo mental"]
 }, {
-  id: "baseball",
-  name: "Béisbol",
-  description: "Programa integral de béisbol con enfoque en todas las posiciones",
-  image: baseballImage,
-  highlights: ["Diamantes de práctica", "Jaulas de bateo", "Análisis biomecánico", "Desarrollo de lanzadores"]
-}, {
-  id: "soccer",
-  name: "Fútbol",
-  description: "Entrenamiento técnico y táctico del fútbol moderno",
-  image: soccerImage,
-  highlights: ["Campos de césped natural", "Entrenamiento táctico", "Preparación física", "Scout universitario"]
-}, {
-  id: "lacrosse",
-  name: "Lacrosse",
-  description: "Desarrollo completo en lacrosse masculino y femenino",
-  image: lacrosseImage,
-  highlights: ["Campos especializados", "Técnica avanzada", "Estrategia de juego", "Preparación universitaria"]
+  id: "volleyball",
+  name: "Voleibol",
+  description: "Programa integral de voleibol con técnicas avanzadas y trabajo en equipo",
+  image: volleyballImage,
+  highlights: ["Canchas cubiertas", "Entrenamiento técnico", "Trabajo en equipo", "Competencias universitarias"]
 }, {
   id: "track",
   name: "Atletismo",
@@ -70,23 +58,35 @@ const sportsPrograms = [{
   image: trackImage,
   highlights: ["Pista de 400m", "Zona de saltos", "Lanzamientos", "Preparación olímpica"]
 }, {
-  id: "volleyball",
-  name: "Voleibol",
-  description: "Programa integral de voleibol con técnicas avanzadas y trabajo en equipo",
-  image: volleyballImage,
-  highlights: ["Canchas cubiertas", "Entrenamiento técnico", "Trabajo en equipo", "Competencias universitarias"]
-}, {
   id: "performance",
   name: "Performance",
   description: "Entrenamiento de alto rendimiento para optimizar el desempeño atlético",
   image: performanceImage,
   highlights: ["Análisis biomecánico", "Preparación física", "Recuperación deportiva", "Nutrición especializada"]
 }, {
+  id: "football",
+  name: "Fútbol Americano",
+  description: "Entrenamiento completo para futuros atletas universitarios",
+  image: footballImage,
+  highlights: ["Campo de práctica", "Sala de pesas", "Análisis táctico", "Preparación para becas"]
+}, {
+  id: "baseball",
+  name: "Béisbol",
+  description: "Programa integral de béisbol con enfoque en todas las posiciones",
+  image: baseballImage,
+  highlights: ["Diamantes de práctica", "Jaulas de bateo", "Análisis biomecánico", "Desarrollo de lanzadores"]
+}, {
   id: "softball",
   name: "Softball",
   description: "Desarrollo completo en softball con enfoque en habilidades específicas",
   image: softballImage,
   highlights: ["Diamantes especializados", "Técnica de bateo", "Pitcheo femenino", "Estrategia de juego"]
+}, {
+  id: "lacrosse",
+  name: "Lacrosse",
+  description: "Desarrollo completo en lacrosse masculino y femenino",
+  image: lacrosseImage,
+  highlights: ["Campos especializados", "Técnica avanzada", "Estrategia de juego", "Preparación universitaria"]
 }, {
   id: "adults",
   name: "Programas de Adultos",
