@@ -19,7 +19,7 @@ const Facilities = () => {
       {/* Header Video Section */}
       <section className="relative overflow-hidden">
         <div className="aspect-video w-full">
-          <iframe className="w-full h-full" src="https://www.youtube.com/embed/1znorFaKdcc?autoplay=1&mute=1&loop=1&controls=0&playlist=1znorFaKdcc&modestbranding=1&rel=0&showinfo=0" title="IMG Academy Campus Tour" allow="autoplay; encrypted-media" allowFullScreen />
+          <iframe className="w-full h-full" src="https://www.youtube.com/embed/1znorFaKdcc?autoplay=1&mute=0&loop=1&controls=0&playlist=1znorFaKdcc&modestbranding=1&rel=0&showinfo=0" title="IMG Academy Campus Tour" allow="autoplay; encrypted-media" allowFullScreen />
         </div>
       </section>
 
