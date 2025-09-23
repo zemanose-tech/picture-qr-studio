@@ -7,6 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Mail, MessageSquare, Globe } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/lib/supabaseClient";
+
 interface InquiryModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -132,47 +134,41 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
       phoneCode: country?.phoneCode || ""
     }));
   };
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const selectedCountryName = countries.find(c => c.code === formData.country)?.name || 'Otro país';
-      const response = await fetch('/functions/v1/send-inquiry-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`
-        },
-        body: JSON.stringify({
-          ...formData,
-          country: selectedCountryName,
-          inquiryType
-        })
-      });
-      if (response.ok) {
-        toast({
-          title: "Consulta enviada",
-          description: "Nos pondremos en contacto contigo pronto."
-        });
+      const selectedCountryName =
+        countries.find((c) => c.code === formData.country)?.name || "Otro país";
 
-        // Reset form and close modal
-        setFormData({
-          name: "",
-          email: "",
-          country: "",
-          phoneCode: "",
-          phone: "",
-          message: ""
-        });
-        onClose();
-      } else {
-        throw new Error('Error al enviar la consulta');
-      }
-    } catch (error) {
-      console.error('Error sending inquiry:', error);
+      // 💡 Call the Edge Function via Supabase SDK (no URL rewriting)
+      const { error } = await supabase.functions.invoke("send-inquiry-email", {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          country: selectedCountryName,
+          phoneCode: formData.phoneCode,
+          phone: formData.phone,
+          message: formData.message,
+          inquiryType,
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Consulta enviada",
+        description: "Nos pondremos en contacto contigo pronto.",
+      });
+
+      setFormData({ name: "", email: "", country: "", phoneCode: "", phone: "", message: "" });
+      onClose();
+    } catch (err) {
+      console.error("Error sending inquiry:", err);
       toast({
         title: "Error",
         description: "Hubo un problema al enviar tu consulta. Por favor, inténtalo de nuevo.",
-        variant: "destructive"
+        variant: "destructive",
       });
     }
   };
