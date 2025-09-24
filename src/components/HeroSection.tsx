@@ -55,9 +55,9 @@ const HeroSection = () => {
       <div className="px-4 sm:px-6 pb-12 sm:pb-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6 sm:mb-8">
         <br />
-          UN CAMPUS.<br />
-          POTENCIAL<br />
-          ILIMITADO.
+          CON IMG<br />
+          TRANSFORMA <br />
+          TU POTENCIAL!
         </h2>
         <p className="text-base sm:text-lg leading-relaxed">En IMG Academy, reunimos a estudiantes-atletas apasionados con entrenadores y profesores de clase mundial, creando un entorno único donde el talento se transforma en resultados.
 

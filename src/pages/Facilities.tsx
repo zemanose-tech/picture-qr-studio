@@ -7,7 +7,7 @@ import Autoplay from "embla-carousel-autoplay";
 const Facilities = () => {
   const campusImages = Array.from({ length: 18 }, (_, i) => ({
     id: i + 1,
-    image: `/public/carousel_images/instalaciones_carousel/${i + 1}.jpg`
+    image: `/carousel_images/instalaciones_carousel/${i + 1}.jpg`
   }));
 
   const plugin = useRef(
