@@ -15,6 +15,8 @@ const Boarding = () => {
   }));
   return <div className="min-h-screen bg-background text-foreground">
       <Header />
+      <br />
+      <br />
       <main>
         {/* Internado Carousel Header */}
         <section className="w-full overflow-hidden">
