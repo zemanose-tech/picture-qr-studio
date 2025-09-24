@@ -66,34 +66,24 @@ Aquí, cada meta cuenta y cada logro se apoya con una atención personalizada, g
 
       {/* Statistics Section */}
       <div className="bg-gray-100 text-primary px-4 sm:px-6 py-12 sm:py-16">
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12">
-          <div className="text-center">
-            <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">100</div>
-            <p className="text-xs sm:text-sm">% tasa de aceptación universitaria</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">25</div>
-            <p className="text-xs sm:text-sm">admisiones a las 25 mejores universidades según US News</p>
-          </div>
-          <div className="text-center">{/* removed col-span-2 */}
-            <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">311</div>
-            <p className="text-xs sm:text-sm">atletas comprometidos con programas NCAA División I, II, III y NAIA</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8">
-          <div className="text-center">
-            <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">8</div>
-            <p className="text-xs sm:text-sm">compromisos con universidades Ivy League</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">38</div>
-            <p className="text-xs sm:text-sm">estudiantes distinguidos como AP Scholars</p>
-          </div>
-          <div className="text-center">{/* removed col-span-2 */}
-            <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">71</div>
-            <p className="text-xs sm:text-sm">países representados</p>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 md:gap-8 auto-rows-fr">
+          {[
+            { n: '100', t: '% tasa de aceptación universitaria' },
+            { n: '25',  t: 'admisiones a las 25 mejores universidades según US News' },
+            { n: '311', t: 'atletas comprometidos con programas NCAA División I, II, III y NAIA' },
+            { n: '8',   t: 'compromisos con universidades Ivy League' },
+            { n: '38',  t: 'estudiantes distinguidos como AP Scholars' },
+            { n: '71',  t: 'países representados' },
+          ].map((s, i) => (
+            <div key={i} className="h-full flex flex-col items-center justify-center text-center px-2">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold leading-none mb-1">
+                {s.n}
+              </div>
+              <p className="text-[11px] sm:text-xs leading-snug max-w-[18ch] sm:max-w-none">
+                {s.t}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
