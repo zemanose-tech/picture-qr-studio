@@ -36,11 +36,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Enlaces rápidos</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/" className="text-primary-foreground/80 hover:text-accent transition-colors">Inicio</a></li>
-              <li><a href="/camps" className="text-primary-foreground/80 hover:text-accent transition-colors">Camps</a></li>
-              <li><a href="/boarding" className="text-primary-foreground/80 hover:text-accent transition-colors">Internado</a></li>
-              <li><a href="/facilities" className="text-primary-foreground/80 hover:text-accent transition-colors">Instalaciones</a></li>
-              <li><a href="/sports" className="text-primary-foreground/80 hover:text-accent transition-colors">Deportes</a></li>
+              <a href="/" className="text-primary-foreground/80 hover:text-accent transition-colors">Inicio</a><li />
+              <Link to="/camps" className="text-primary-foreground/80 hover:text-accent transition-colors">Camps</Link><li />
+              <Link to="/boarding" className="text-primary-foreground/80 hover:text-accent transition-colors">Internado</Link><li />
+              <Link to="/facilities" className="text-primary-foreground/80 hover:text-accent transition-colors">Instalaciones</Link><li />
+              <Link to="/sports" className="text-primary-foreground/80 hover:text-accent transition-colors">Deportes</Link><li />
               <li><button onClick={() => setIsModalOpen(true)} className="text-primary-foreground/80 hover:text-accent transition-colors text-left">Contacto</button></li>
             </ul>
           </div>
