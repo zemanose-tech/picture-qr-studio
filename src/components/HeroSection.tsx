@@ -54,6 +54,7 @@ const HeroSection = () => {
       {/* Main Heading */}
       <div className="px-4 sm:px-6 pb-12 sm:pb-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6 sm:mb-8">
+        <br />
           UN CAMPUS.<br />
           POTENCIAL<br />
           ILIMITADO.
