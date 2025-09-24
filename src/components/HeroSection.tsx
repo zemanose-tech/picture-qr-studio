@@ -55,7 +55,7 @@ const HeroSection = () => {
       <div className="px-4 sm:px-6 pb-12 sm:pb-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6 sm:mb-8">
         <br />
-          CON IMG<br />
+          ¡CON IMG<br />
           TRANSFORMA <br />
           TU POTENCIAL!
         </h2>
@@ -68,12 +68,12 @@ Aquí, cada meta cuenta y cada logro se apoya con una atención personalizada, g
       <div className="bg-gray-100 text-primary px-4 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 md:gap-8 auto-rows-fr">
           {[
-            { n: '100', t: '% tasa de aceptación universitaria' },
-            { n: '25',  t: 'admisiones a las 25 mejores universidades según US News' },
-            { n: '311', t: 'atletas comprometidos con programas NCAA División I, II, III y NAIA' },
-            { n: '8',   t: 'compromisos con universidades Ivy League' },
-            { n: '38',  t: 'estudiantes distinguidos como AP Scholars' },
-            { n: '71',  t: 'países representados' },
+            { n: '31.000', t: 'estudiantes-atletas de IMG Academy y NCSA que ingresan a universidades cada año' },
+            { n: '25',  t: '% de los equipos universitarios de primer año cuentan con atletas de IMG Academy y NCSA' },
+            { n: '78', t: '% de los programas universitarios y más de 40.000 entrenadores reclutan a través de NCSA' },
+            { n: '150',   t: 'estudiantes de IMG Academy seleccionados por ligas profesionales en los últimos 10 años' },
+            { n: '300',  t: 'compromisos universitarios de atletas de IMG Academy para la promoción 2025' },
+            { n: '100',  t: '% tasa de graduación de IMG Academy' },
           ].map((s, i) => (
             <div key={i} className="h-full flex flex-col items-center justify-center text-center px-2">
               <div className="text-3xl sm:text-4xl md:text-5xl font-bold leading-none mb-1">

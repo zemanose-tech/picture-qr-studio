@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoWhite from "@/assets/img-logo-white.png";
+import logoWhite from "@/assets/sportsacademy-logo-white.png";
 import { InquiryModal } from "@/components/InquiryModal";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
