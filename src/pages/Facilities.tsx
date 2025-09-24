@@ -15,6 +15,8 @@ const Facilities = () => {
   );
   return <div className="min-h-screen bg-background text-foreground">
       <Header />
+      <br />
+      <br />
       
       {/* Header Video Section */}
       <section className="relative overflow-hidden">
