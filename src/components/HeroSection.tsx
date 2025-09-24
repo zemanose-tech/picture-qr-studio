@@ -75,12 +75,12 @@ Aquí, cada meta cuenta y cada logro se apoya con una atención personalizada, g
             <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">25</div>
             <p className="text-xs sm:text-sm">admisiones a las 25 mejores universidades según US News</p>
           </div>
-          <div className="text-center col-span-2 sm:col-span-1">
+          <div className="text-center">{/* removed col-span-2 */}
             <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">311</div>
             <p className="text-xs sm:text-sm">atletas comprometidos con programas NCAA División I, II, III y NAIA</p>
           </div>
         </div>
-        
+
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8">
           <div className="text-center">
             <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">8</div>
@@ -90,7 +90,7 @@ Aquí, cada meta cuenta y cada logro se apoya con una atención personalizada, g
             <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">38</div>
             <p className="text-xs sm:text-sm">estudiantes distinguidos como AP Scholars</p>
           </div>
-          <div className="text-center col-span-2 sm:col-span-1">
+          <div className="text-center">{/* removed col-span-2 */}
             <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">71</div>
             <p className="text-xs sm:text-sm">países representados</p>
           </div>

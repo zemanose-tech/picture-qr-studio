@@ -27,7 +27,8 @@ const Boarding = () => {
         <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              IMG ACADEMY – Donde el talento se convierte en éxito
+              IMG ACADEMY <br />
+              Donde el talento se convierte en éxito
             </h1>
           </div>
         </section>
