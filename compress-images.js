@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import sharp from "sharp";
 
-const inputDir = "./src/assets";   // folder with your original images
+const inputDir = "./public/carousel_images/track_carousel";   // folder with your original images
 const outputDir = "./optimized"; // folder to save compressed versions
 
 // ensure output folder exists
