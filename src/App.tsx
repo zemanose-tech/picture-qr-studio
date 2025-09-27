@@ -15,6 +15,7 @@ import Boarding from "./pages/Boarding";
 import Facilities from "./pages/Facilities";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
+import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/adult-programs" element={<AdultPrograms />} />
           
           <Route path="/contact" element={<Contact />} />
+          <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/camps" element={<Camps />} />
           <Route path="/boarding" element={<Boarding />} />
           <Route path="/facilities" element={<Facilities />} />

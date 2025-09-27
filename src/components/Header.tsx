@@ -33,6 +33,9 @@ const Header = () => {
                 <Link to="/sports" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
                   Deportes
                 </Link>
+                <Link to="/aboutus" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  Quienes Somos
+                </Link>
               </div>}
           </div>
           <button onClick={() => setIsModalOpen(true)} className="text-white hover:text-white/80 transition-colors">

@@ -41,6 +41,7 @@ const Footer = () => {
               <Link to="/boarding" className="text-primary-foreground/80 hover:text-accent transition-colors">Internado</Link><li />
               <Link to="/facilities" className="text-primary-foreground/80 hover:text-accent transition-colors">Instalaciones</Link><li />
               <Link to="/sports" className="text-primary-foreground/80 hover:text-accent transition-colors">Deportes</Link><li />
+              <Link to="/aboutus" className="text-primary-foreground/80 hover:text-accent transition-colors">Quienes Somos</Link><li />
               <li><button onClick={() => setIsModalOpen(true)} className="text-primary-foreground/80 hover:text-accent transition-colors text-left">Contacto</button></li>
             </ul>
           </div>
