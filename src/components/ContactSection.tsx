@@ -6,8 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send, User, Calendar } from "lucide-react";
+import { useLanguage } from "@/hooks/use-language";
+import { getContactTranslation } from "@/lib/translations";
 
 const ContactSection = () => {
+  const { language } = useLanguage();
+  const contactCopy = getContactTranslation(language);
+
   return (
     <section id="contacto" className="py-20 bg-img-gray">
       <div className="container mx-auto px-4">
@@ -15,14 +20,15 @@ const ContactSection = () => {
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-accent text-accent-foreground">
             <MessageCircle className="w-4 h-4 mr-2" />
-            Contacto Directo
+            {contactCopy.badge}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Tu representante en <span className="text-primary">Latinoamérica</span>
+            {contactCopy.heading.pre}{" "}
+            <span className="text-primary">{contactCopy.heading.highlight}</span>
+            {contactCopy.heading.post ? <>{" "}{contactCopy.heading.post}</> : null}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Como parte del programa de referencias global de IMG Academy, te ofrecemos atención personalizada 
-            en español y soporte completo durante todo el proceso de admisión.
+            {contactCopy.description}
           </p>
         </div>
 
@@ -37,20 +43,17 @@ const ContactSection = () => {
                     <User className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-xl text-foreground">Tu representante personal</CardTitle>
-                    <CardDescription>Especialista en admisiones para Latinoamérica</CardDescription>
+                    <CardTitle className="text-xl text-foreground">{contactCopy.representativeCard.title}</CardTitle>
+                    <CardDescription>{contactCopy.representativeCard.subtitle}</CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <p className="text-muted-foreground">
-                    Soy [Tu Nombre], representante oficial de IMG Academy para Colombia, España, Panamá y Costa Rica. 
-                    Mi trabajo es hacer que tu proceso de admisión sea lo más sencillo posible.
-                  </p>
+                  <p className="text-muted-foreground">{contactCopy.representativeCard.body}</p>
                   <div className="bg-accent/10 p-4 rounded-lg">
                     <p className="text-sm text-foreground font-semibold">
-                      ✨ Garantía de respuesta en menos de 24 horas
+                      {contactCopy.representativeCard.guarantee}
                     </p>
                   </div>
                 </div>
@@ -66,14 +69,14 @@ const ContactSection = () => {
                       <Phone className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Teléfono / WhatsApp</h3>
-                      <p className="text-sm text-muted-foreground">Disponible de 8:00 - 20:00</p>
+                      <h3 className="font-semibold text-foreground">{contactCopy.methods.phone.title}</h3>
+                      <p className="text-sm text-muted-foreground">{contactCopy.methods.phone.availability}</p>
                     </div>
                   </div>
-                  <p className="text-primary font-semibold">+57 123 456 7890</p>
+                  <p className="text-primary font-semibold">{contactCopy.methods.phone.number}</p>
                   <Button variant="outline" size="sm" className="w-full mt-3">
                     <MessageCircle className="w-4 h-4 mr-2" />
-                    Enviar WhatsApp
+                    {contactCopy.methods.phone.button}
                   </Button>
                 </CardContent>
               </Card>
@@ -85,14 +88,14 @@ const ContactSection = () => {
                       <Mail className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Email directo</h3>
-                      <p className="text-sm text-muted-foreground">Respuesta en 24h</p>
+                      <h3 className="font-semibold text-foreground">{contactCopy.methods.email.title}</h3>
+                      <p className="text-sm text-muted-foreground">{contactCopy.methods.email.availability}</p>
                     </div>
                   </div>
-                  <p className="text-primary font-semibold">admisiones.latam@imgacademy.com</p>
+                  <p className="text-primary font-semibold">{contactCopy.methods.email.address}</p>
                   <Button variant="outline" size="sm" className="w-full mt-3">
                     <Mail className="w-4 h-4 mr-2" />
-                    Enviar email
+                    {contactCopy.methods.email.button}
                   </Button>
                 </CardContent>
               </Card>
@@ -103,25 +106,31 @@ const ContactSection = () => {
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
                   <Clock className="w-6 h-6 text-primary mr-3" />
-                  <h3 className="text-lg font-semibold text-foreground">Horarios de atención</h3>
+                  <h3 className="text-lg font-semibold text-foreground">{contactCopy.hours.title}</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="font-semibold text-foreground mb-2">Lunes - Viernes</p>
-                    <p className="text-muted-foreground">8:00 AM - 8:00 PM (Hora Colombia)</p>
-                    <p className="text-muted-foreground">2:00 PM - 2:00 AM (Hora España)</p>
+                    <p className="font-semibold text-foreground mb-2">{contactCopy.hours.weekdays.label}</p>
+                    {contactCopy.hours.weekdays.schedules.map((schedule, index) => (
+                      <p key={`weekday-${index}`} className="text-muted-foreground">
+                        {schedule}
+                      </p>
+                    ))}
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground mb-2">Sábados</p>
-                    <p className="text-muted-foreground">9:00 AM - 2:00 PM (Hora Colombia)</p>
-                    <p className="text-muted-foreground">3:00 PM - 8:00 PM (Hora España)</p>
+                    <p className="font-semibold text-foreground mb-2">{contactCopy.hours.saturday.label}</p>
+                    {contactCopy.hours.saturday.schedules.map((schedule, index) => (
+                      <p key={`saturday-${index}`} className="text-muted-foreground">
+                        {schedule}
+                      </p>
+                    ))}
                   </div>
                 </div>
                 <div className="mt-4 p-3 bg-accent/10 rounded-lg">
                   <div className="flex items-center">
                     <MapPin className="w-4 h-4 text-accent mr-2" />
                     <p className="text-sm text-foreground">
-                      <span className="font-semibold">Cobertura:</span> Colombia, España, Panamá, Costa Rica
+                      <span className="font-semibold">{contactCopy.hours.coverage.label}</span> {contactCopy.hours.coverage.regions}
                     </p>
                   </div>
                 </div>
@@ -132,95 +141,91 @@ const ContactSection = () => {
           {/* Contact Form */}
           <Card className="shadow-elegant border-0">
             <CardHeader>
-              <CardTitle className="text-2xl text-foreground">Solicita información personalizada</CardTitle>
-              <CardDescription>
-                Completa este formulario y te contactaremos en menos de 24 horas con información específica 
-                sobre programas, becas y descuentos disponibles.
-              </CardDescription>
+              <CardTitle className="text-2xl text-foreground">{contactCopy.form.title}</CardTitle>
+              <CardDescription>{contactCopy.form.description}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName">Nombre *</Label>
-                  <Input id="firstName" placeholder="Tu nombre" />
+                  <Label htmlFor="firstName">{contactCopy.form.fields.firstName.label}</Label>
+                  <Input id="firstName" placeholder={contactCopy.form.fields.firstName.placeholder} />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="lastName">Apellidos *</Label>
-                  <Input id="lastName" placeholder="Tus apellidos" />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email *</Label>
-                  <Input id="email" type="email" placeholder="tu@email.com" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Teléfono / WhatsApp *</Label>
-                  <Input id="phone" placeholder="+57 123 456 7890" />
+                  <Label htmlFor="lastName">{contactCopy.form.fields.lastName.label}</Label>
+                  <Input id="lastName" placeholder={contactCopy.form.fields.lastName.placeholder} />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="country">País *</Label>
+                  <Label htmlFor="email">{contactCopy.form.fields.email.label}</Label>
+                  <Input id="email" type="email" placeholder={contactCopy.form.fields.email.placeholder} />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone">{contactCopy.form.fields.phone.label}</Label>
+                  <Input id="phone" placeholder={contactCopy.form.fields.phone.placeholder} />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="country">{contactCopy.form.fields.country.label}</Label>
                   <Select>
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona tu país" />
+                      <SelectValue placeholder={contactCopy.form.fields.country.placeholder} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="colombia">Colombia</SelectItem>
-                      <SelectItem value="spain">España</SelectItem>
-                      <SelectItem value="panama">Panamá</SelectItem>
-                      <SelectItem value="costa-rica">Costa Rica</SelectItem>
-                      <SelectItem value="other">Otro país</SelectItem>
+                      {contactCopy.form.fields.country.options.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="age">Edad del estudiante</Label>
-                  <Input id="age" placeholder="15 años" />
+                  <Label htmlFor="age">{contactCopy.form.fields.age.label}</Label>
+                  <Input id="age" placeholder={contactCopy.form.fields.age.placeholder} />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="program">Programa de interés</Label>
+                <Label htmlFor="program">{contactCopy.form.fields.program.label}</Label>
                 <Select>
                   <SelectTrigger>
-                    <SelectValue placeholder="¿Qué programa te interesa?" />
+                    <SelectValue placeholder={contactCopy.form.fields.program.placeholder} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="boarding">Programa de Internado</SelectItem>
-                    <SelectItem value="summer">Campamentos de Verano</SelectItem>
-                    <SelectItem value="university">Academias Universitarias</SelectItem>
-                    <SelectItem value="unsure">No estoy seguro</SelectItem>
+                    {contactCopy.form.fields.program.options.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="sport">Principal deporte de interés</Label>
+                <Label htmlFor="sport">{contactCopy.form.fields.sport.label}</Label>
                 <Select>
                   <SelectTrigger>
-                    <SelectValue placeholder="Selecciona el deporte principal" />
+                    <SelectValue placeholder={contactCopy.form.fields.sport.placeholder} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="tennis">Tenis</SelectItem>
-                    <SelectItem value="golf">Golf</SelectItem>
-                    <SelectItem value="soccer">Fútbol</SelectItem>
-                    <SelectItem value="basketball">Baloncesto</SelectItem>
-                    <SelectItem value="baseball">Béisbol</SelectItem>
-                    <SelectItem value="track">Atletismo</SelectItem>
-                    <SelectItem value="multiple">Múltiples deportes</SelectItem>
+                    {contactCopy.form.fields.sport.options.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">Mensaje adicional</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Cuéntanos sobre tus objetivos deportivos y académicos, experiencia previa, preguntas específicas, etc." 
+                <Label htmlFor="message">{contactCopy.form.fields.message.label}</Label>
+                <Textarea
+                  id="message"
+                  placeholder={contactCopy.form.fields.message.placeholder}
                   rows={4}
                 />
               </div>
@@ -228,14 +233,14 @@ const ContactSection = () => {
               <div className="space-y-4">
                 <Button className="w-full bg-primary hover:bg-primary/90 text-lg py-6">
                   <Send className="w-5 h-5 mr-2" />
-                  Enviar solicitud de información
+                  {contactCopy.form.submitButton}
                 </Button>
-                
+
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground">
-                    Al enviar este formulario, aceptas que nos contactemos contigo sobre los programas de IMG Academy.
+                    {contactCopy.form.consent.text}
                     <br />
-                    <span className="text-accent font-semibold">Tu información está 100% protegida.</span>
+                    <span className="text-accent font-semibold">{contactCopy.form.consent.highlight}</span>
                   </p>
                 </div>
               </div>
@@ -246,14 +251,11 @@ const ContactSection = () => {
         {/* Schedule Call CTA */}
         <div className="mt-16 bg-gradient-hero rounded-lg p-8 text-center text-white">
           <Calendar className="w-12 h-12 text-accent mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-4">¿Prefieres una llamada personal?</h3>
-          <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-            Agenda una llamada gratuita de 30 minutos para resolver todas tus dudas y conocer en detalle 
-            los programas que mejor se adapten a tus objetivos.
-          </p>
+          <h3 className="text-2xl font-bold mb-4">{contactCopy.scheduleCta.title}</h3>
+          <p className="text-white/90 mb-6 max-w-2xl mx-auto">{contactCopy.scheduleCta.description}</p>
           <Button variant="secondary" size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
             <Calendar className="w-5 h-5 mr-2" />
-            Agendar llamada gratuita
+            {contactCopy.scheduleCta.button}
           </Button>
         </div>
       </div>

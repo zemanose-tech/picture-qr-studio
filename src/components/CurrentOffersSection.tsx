@@ -1,12 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLanguage } from "@/hooks/use-language";
+import { getCurrentOffersTranslation } from "@/lib/translations";
 
 const CurrentOffersSection = () => {
+  const { language } = useLanguage();
+  const currentOffersCopy = getCurrentOffersTranslation(language);
+
   return (
     <section className="bg-white px-6 py-16">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold text-primary mb-4">
-          OFERTAS ACTUALES DEL CAMPO
+          {currentOffersCopy.title}
         </h2>
       </div>
 
@@ -14,19 +19,17 @@ const CurrentOffersSection = () => {
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8">
           <div className="flex justify-between items-start mb-6">
             <div>
-              <h3 className="text-2xl font-bold mb-2">IMG ACADEMY</h3>
-              <h4 className="text-xl font-bold">TARIFA DE RESIDENTE DE FLORIDA</h4>
+              <h3 className="text-2xl font-bold mb-2">{currentOffersCopy.card.heading}</h3>
+              <h4 className="text-xl font-bold">{currentOffersCopy.card.subheading}</h4>
             </div>
             {/* Image placeholder */}
             <div className="w-24 h-24 bg-gray-400 rounded"></div>
           </div>
-          
-          <p className="text-lg mb-6">
-            Los residentes de Florida pueden ahorrar 10% en campos juveniles entre 12/29/24 - 5/25/25 y 8/17/25 - 12/28/25.
-          </p>
-          
+
+          <p className="text-lg mb-6">{currentOffersCopy.card.description}</p>
+
           <Button className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-full font-semibold">
-            Reserva Tu Lugar
+            {currentOffersCopy.card.button}
           </Button>
         </div>
       </Card>
@@ -35,8 +38,8 @@ const CurrentOffersSection = () => {
       <div className="mt-8">
         <div className="w-full h-64 bg-gray-400 rounded-lg flex items-center justify-center">
           <div className="text-center text-gray-600">
-            <p className="text-sm">Imagen de Atletas Placeholder</p>
-            <p className="text-xs">(Equipo celebrando)</p>
+            <p className="text-sm">{currentOffersCopy.placeholder.title}</p>
+            <p className="text-xs">{currentOffersCopy.placeholder.subtitle}</p>
           </div>
         </div>
       </div>

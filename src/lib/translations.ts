@@ -111,6 +111,121 @@ type ContactHelpTranslation = {
   inquiryType: string;
 };
 
+type ContactTranslation = {
+  badge: string;
+  heading: {
+    pre: string;
+    highlight: string;
+    post: string;
+  };
+  description: string;
+  representativeCard: {
+    title: string;
+    subtitle: string;
+    body: string;
+    guarantee: string;
+  };
+  methods: {
+    phone: {
+      title: string;
+      availability: string;
+      button: string;
+      number: string;
+    };
+    email: {
+      title: string;
+      availability: string;
+      button: string;
+      address: string;
+    };
+  };
+  hours: {
+    title: string;
+    weekdays: {
+      label: string;
+      schedules: string[];
+    };
+    saturday: {
+      label: string;
+      schedules: string[];
+    };
+    coverage: {
+      label: string;
+      regions: string;
+    };
+  };
+  form: {
+    title: string;
+    description: string;
+    fields: {
+      firstName: { label: string; placeholder: string };
+      lastName: { label: string; placeholder: string };
+      email: { label: string; placeholder: string };
+      phone: { label: string; placeholder: string };
+      country: {
+        label: string;
+        placeholder: string;
+        options: Array<{ value: string; label: string }>;
+      };
+      age: { label: string; placeholder: string };
+      program: {
+        label: string;
+        placeholder: string;
+        options: Array<{ value: string; label: string }>;
+      };
+      sport: {
+        label: string;
+        placeholder: string;
+        options: Array<{ value: string; label: string }>;
+      };
+      message: { label: string; placeholder: string };
+    };
+    submitButton: string;
+    consent: {
+      text: string;
+      highlight: string;
+    };
+  };
+  scheduleCta: {
+    title: string;
+    description: string;
+    button: string;
+  };
+};
+
+type CurrentOffersTranslation = {
+  title: string;
+  card: {
+    heading: string;
+    subheading: string;
+    description: string;
+    button: string;
+  };
+  placeholder: {
+    title: string;
+    subtitle: string;
+  };
+};
+
+type ImgCampsTranslation = {
+  heading: string;
+  description: string;
+  button: string;
+  carouselLabels: Array<{ id: number; label: string; emoji: string }>;
+};
+
+type SportsEducationTranslation = {
+  titleLines: string[];
+  description: string;
+};
+
+type SportsCarouselTranslation = {
+  title: string;
+  description: string;
+  button: string;
+  sports: Array<{ id: string; name: string; description: string }>;
+};
+
 type FooterTranslation = {
   tagline: string;
   description: string;
@@ -448,6 +563,389 @@ export const programsTranslations: TranslationMap<ProgramsTranslation> = {
   },
 };
 
+export const currentOffersTranslations: TranslationMap<CurrentOffersTranslation> = {
+  es: {
+    title: "OFERTAS ACTUALES DEL CAMPO",
+    card: {
+      heading: "IMG ACADEMY",
+      subheading: "TARIFA DE RESIDENTE DE FLORIDA",
+      description:
+        "Los residentes de Florida pueden ahorrar 10% en campos juveniles entre 12/29/24 - 5/25/25 y 8/17/25 - 12/28/25.",
+      button: "Reserva Tu Lugar",
+    },
+    placeholder: {
+      title: "Imagen de Atletas Placeholder",
+      subtitle: "(Equipo celebrando)",
+    },
+  },
+  en: {
+    title: "CURRENT CAMP OFFERS",
+    card: {
+      heading: "IMG ACADEMY",
+      subheading: "FLORIDA RESIDENT RATE",
+      description:
+        "Florida residents can save 10% on youth camps between 12/29/24 - 5/25/25 and 8/17/25 - 12/28/25.",
+      button: "Reserve Your Spot",
+    },
+    placeholder: {
+      title: "Athlete Image Placeholder",
+      subtitle: "(Team celebrating)",
+    },
+  },
+};
+
+export const imgCampsTranslations: TranslationMap<ImgCampsTranslation> = {
+  es: {
+    heading: "IMG CAMPS",
+    description:
+      "Los campamentos deportivos de IMG Academy brindan a los atletas la plataforma para maximizar su potencial, ofreciendo opciones de programación personalizables únicas para la edad, nivel de habilidad y objetivos deportivos de cada uno. Con programas disponibles durante todo el año, los campamentos de IMG permiten a los atletas acceder a entrenamientos que pueden mejorar su juego durante casi todos los periodos de descanso en sus calendarios escolares o deportivos.",
+    button: "Saber Más",
+    carouselLabels: [
+      { id: 1, label: "Summer Camps", emoji: "⛺" },
+      { id: 2, label: "Day Camps", emoji: "🌅" },
+      { id: 3, label: "Sport Specific", emoji: "🏆" },
+      { id: 4, label: "Multi-Sport", emoji: "🎯" },
+      { id: 5, label: "Elite Training", emoji: "💪" },
+    ],
+  },
+  en: {
+    heading: "IMG CAMPS",
+    description:
+      "IMG Academy sports camps give athletes the platform to maximise their potential, offering unique customisable programming options tailored to each athlete's age, skill level, and sporting goals. With programmes available year-round, IMG camps allow athletes to access training that can elevate their game during nearly every break in their academic or athletic calendars.",
+    button: "Learn More",
+    carouselLabels: [
+      { id: 1, label: "Summer Camps", emoji: "⛺" },
+      { id: 2, label: "Day Camps", emoji: "🌅" },
+      { id: 3, label: "Sport Specific", emoji: "🏆" },
+      { id: 4, label: "Multi-Sport", emoji: "🎯" },
+      { id: 5, label: "Elite Training", emoji: "💪" },
+    ],
+  },
+};
+
+export const sportsEducationTranslations: TranslationMap<SportsEducationTranslation> = {
+  es: {
+    titleLines: ["LA DIFERENCIA", "IMG ACADEMY"],
+    description:
+      "En IMG Academy, los estudiantes-atletas tienen la libertad de ser más. Más que un estudiante. Más que un atleta. Con un enfoque integral que combina lo académico, lo deportivo y el desarrollo personal, IMG Academy les permite explorar sus pasiones sin tener que sacrificar una por otra. Nuestra comunidad de profesores, entrenadores, especialistas y personal demuestra una experiencia inigualable en sus áreas, trabajando unidos con el mismo objetivo: crear un entorno donde los estudiantes-atletas puedan alcanzar su máximo potencial. A pesar de provenir de culturas y orígenes diversos, nuestra comunidad comparte un lazo de dedicación y una creencia inquebrantable que inspira, une y crea vínculos para toda la vida. Si eres un estudiante-atleta apasionado, con ganas de crecer y superarte, no encontrarás un lugar mejor en el mundo para cultivar tus sueños que IMG Academy.",
+  },
+  en: {
+    titleLines: ["THE IMG ACADEMY", "DIFFERENCE"],
+    description:
+      "At IMG Academy, student-athletes have the freedom to be more. More than a student. More than an athlete. With a holistic approach that combines academics, sport, and personal development, IMG Academy lets them explore every passion without sacrificing one for the other. Our community of teachers, coaches, specialists, and staff bring unmatched expertise, working together with a single goal: creating an environment where student-athletes can reach their full potential. Though they come from diverse cultures and backgrounds, our community shares a dedication and unshakable belief that inspires, unites, and builds lifelong bonds. If you are a passionate student-athlete ready to grow and push yourself, there is no better place in the world to cultivate your dreams than IMG Academy.",
+  },
+};
+
+export const sportsCarouselTranslations: TranslationMap<SportsCarouselTranslation> = {
+  es: {
+    title: "EXPLORA NUESTROS DEPORTES",
+    description:
+      "Descubre nuestra amplia gama de programas deportivos diseñados para desarrollar atletas de élite",
+    button: "Ver Todos Los Deportes",
+    sports: [
+      {
+        id: "tennis",
+        name: "Tenis",
+        description: "Programa de entrenamiento de élite en tenis con instalaciones de clase mundial",
+      },
+      {
+        id: "golf",
+        name: "Golf",
+        description: "Campo de golf de 18 hoyos diseñado para el desarrollo integral del golfista",
+      },
+      {
+        id: "football",
+        name: "Fútbol Americano",
+        description: "Entrenamiento completo para futuros atletas universitarios",
+      },
+      {
+        id: "basketball",
+        name: "Baloncesto",
+        description: "Desarrollo de habilidades fundamentales y avanzadas del baloncesto",
+      },
+      {
+        id: "baseball",
+        name: "Béisbol",
+        description: "Programa integral de béisbol con enfoque en todas las posiciones",
+      },
+      {
+        id: "soccer",
+        name: "Fútbol",
+        description: "Entrenamiento técnico y táctico del fútbol moderno",
+      },
+    ],
+  },
+  en: {
+    title: "EXPLORE OUR SPORTS",
+    description:
+      "Discover our wide range of sports programmes designed to develop elite athletes",
+    button: "View All Sports",
+    sports: [
+      {
+        id: "tennis",
+        name: "Tennis",
+        description: "Elite tennis training programme with world-class facilities",
+      },
+      {
+        id: "golf",
+        name: "Golf",
+        description: "18-hole golf course designed for complete player development",
+      },
+      {
+        id: "football",
+        name: "American Football",
+        description: "Comprehensive training for future collegiate athletes",
+      },
+      {
+        id: "basketball",
+        name: "Basketball",
+        description: "Development of both fundamental and advanced basketball skills",
+      },
+      {
+        id: "baseball",
+        name: "Baseball",
+        description: "Complete baseball programme with a focus on every position",
+      },
+      {
+        id: "soccer",
+        name: "Soccer",
+        description: "Modern technical and tactical football training",
+      },
+    ],
+  },
+};
+
+export const contactTranslations: TranslationMap<ContactTranslation> = {
+  es: {
+    badge: "Contacto Directo",
+    heading: {
+      pre: "Tu representante en",
+      highlight: "Latinoamérica",
+      post: "",
+    },
+    description:
+      "Como parte del programa de referencias global de IMG Academy, te ofrecemos atención personalizada en español y soporte completo durante todo el proceso de admisión.",
+    representativeCard: {
+      title: "Tu representante personal",
+      subtitle: "Especialista en admisiones para Latinoamérica",
+      body:
+        "Soy [Tu Nombre], representante oficial de IMG Academy para Colombia, España, Panamá y Costa Rica. Mi trabajo es hacer que tu proceso de admisión sea lo más sencillo posible.",
+      guarantee: "✨ Garantía de respuesta en menos de 24 horas",
+    },
+    methods: {
+      phone: {
+        title: "Teléfono / WhatsApp",
+        availability: "Disponible de 8:00 - 20:00",
+        button: "Enviar WhatsApp",
+        number: "+57 123 456 7890",
+      },
+      email: {
+        title: "Email directo",
+        availability: "Respuesta en 24h",
+        button: "Enviar email",
+        address: "admisiones.latam@imgacademy.com",
+      },
+    },
+    hours: {
+      title: "Horarios de atención",
+      weekdays: {
+        label: "Lunes - Viernes",
+        schedules: [
+          "8:00 AM - 8:00 PM (Hora Colombia)",
+          "2:00 PM - 2:00 AM (Hora España)",
+        ],
+      },
+      saturday: {
+        label: "Sábados",
+        schedules: [
+          "9:00 AM - 2:00 PM (Hora Colombia)",
+          "3:00 PM - 8:00 PM (Hora España)",
+        ],
+      },
+      coverage: {
+        label: "Cobertura:",
+        regions: "Colombia, España, Panamá, Costa Rica",
+      },
+    },
+    form: {
+      title: "Solicita información personalizada",
+      description:
+        "Completa este formulario y te contactaremos en menos de 24 horas con información específica sobre programas, becas y descuentos disponibles.",
+      fields: {
+        firstName: { label: "Nombre *", placeholder: "Tu nombre" },
+        lastName: { label: "Apellidos *", placeholder: "Tus apellidos" },
+        email: { label: "Email *", placeholder: "tu@email.com" },
+        phone: { label: "Teléfono / WhatsApp *", placeholder: "+57 123 456 7890" },
+        country: {
+          label: "País *",
+          placeholder: "Selecciona tu país",
+          options: [
+            { value: "colombia", label: "Colombia" },
+            { value: "spain", label: "España" },
+            { value: "panama", label: "Panamá" },
+            { value: "costa-rica", label: "Costa Rica" },
+            { value: "other", label: "Otro país" },
+          ],
+        },
+        age: { label: "Edad del estudiante", placeholder: "15 años" },
+        program: {
+          label: "Programa de interés",
+          placeholder: "¿Qué programa te interesa?",
+          options: [
+            { value: "boarding", label: "Programa de Internado" },
+            { value: "summer", label: "Campamentos de Verano" },
+            { value: "university", label: "Academias Universitarias" },
+            { value: "unsure", label: "No estoy seguro" },
+          ],
+        },
+        sport: {
+          label: "Principal deporte de interés",
+          placeholder: "Selecciona el deporte principal",
+          options: [
+            { value: "tennis", label: "Tenis" },
+            { value: "golf", label: "Golf" },
+            { value: "soccer", label: "Fútbol" },
+            { value: "basketball", label: "Baloncesto" },
+            { value: "baseball", label: "Béisbol" },
+            { value: "track", label: "Atletismo" },
+            { value: "multiple", label: "Múltiples deportes" },
+          ],
+        },
+        message: {
+          label: "Mensaje adicional",
+          placeholder:
+            "Cuéntanos sobre tus objetivos deportivos y académicos, experiencia previa, preguntas específicas, etc.",
+        },
+      },
+      submitButton: "Enviar solicitud de información",
+      consent: {
+        text: "Al enviar este formulario, aceptas que nos contactemos contigo sobre los programas de IMG Academy.",
+        highlight: "Tu información está 100% protegida.",
+      },
+    },
+    scheduleCta: {
+      title: "¿Prefieres una llamada personal?",
+      description:
+        "Agenda una llamada gratuita de 30 minutos para resolver todas tus dudas y conocer en detalle los programas que mejor se adapten a tus objetivos.",
+      button: "Agendar llamada gratuita",
+    },
+  },
+  en: {
+    badge: "Direct Contact",
+    heading: {
+      pre: "Your representative in",
+      highlight: "Latin America",
+      post: "",
+    },
+    description:
+      "As part of IMG Academy's global referral programme, we provide personalised assistance in Spanish and full support throughout the admissions process.",
+    representativeCard: {
+      title: "Your personal representative",
+      subtitle: "Admissions specialist for Latin America",
+      body:
+        "I'm [Your Name], the official IMG Academy representative for Colombia, Spain, Panama, and Costa Rica. My role is to make your admissions process as seamless as possible.",
+      guarantee: "✨ Response guaranteed in under 24 hours",
+    },
+    methods: {
+      phone: {
+        title: "Phone / WhatsApp",
+        availability: "Available from 8:00 - 20:00",
+        button: "Send WhatsApp",
+        number: "+57 123 456 7890",
+      },
+      email: {
+        title: "Direct email",
+        availability: "24h response",
+        button: "Send email",
+        address: "admisiones.latam@imgacademy.com",
+      },
+    },
+    hours: {
+      title: "Service hours",
+      weekdays: {
+        label: "Monday - Friday",
+        schedules: [
+          "8:00 AM - 8:00 PM (Colombia Time)",
+          "2:00 PM - 2:00 AM (Spain Time)",
+        ],
+      },
+      saturday: {
+        label: "Saturdays",
+        schedules: [
+          "9:00 AM - 2:00 PM (Colombia Time)",
+          "3:00 PM - 8:00 PM (Spain Time)",
+        ],
+      },
+      coverage: {
+        label: "Coverage:",
+        regions: "Colombia, Spain, Panama, Costa Rica",
+      },
+    },
+    form: {
+      title: "Request personalised information",
+      description:
+        "Complete this form and we'll contact you within 24 hours with specific information about programmes, scholarships, and available discounts.",
+      fields: {
+        firstName: { label: "First name *", placeholder: "Your first name" },
+        lastName: { label: "Last name *", placeholder: "Your last name" },
+        email: { label: "Email *", placeholder: "your@email.com" },
+        phone: { label: "Phone / WhatsApp *", placeholder: "+57 123 456 7890" },
+        country: {
+          label: "Country *",
+          placeholder: "Select your country",
+          options: [
+            { value: "colombia", label: "Colombia" },
+            { value: "spain", label: "Spain" },
+            { value: "panama", label: "Panama" },
+            { value: "costa-rica", label: "Costa Rica" },
+            { value: "other", label: "Other country" },
+          ],
+        },
+        age: { label: "Student age", placeholder: "15 years old" },
+        program: {
+          label: "Programme of interest",
+          placeholder: "Which programme interests you?",
+          options: [
+            { value: "boarding", label: "Boarding Programme" },
+            { value: "summer", label: "Summer Camps" },
+            { value: "university", label: "University Academies" },
+            { value: "unsure", label: "I'm not sure" },
+          ],
+        },
+        sport: {
+          label: "Primary sport of interest",
+          placeholder: "Select the main sport",
+          options: [
+            { value: "tennis", label: "Tennis" },
+            { value: "golf", label: "Golf" },
+            { value: "soccer", label: "Soccer" },
+            { value: "basketball", label: "Basketball" },
+            { value: "baseball", label: "Baseball" },
+            { value: "track", label: "Track & Field" },
+            { value: "multiple", label: "Multiple sports" },
+          ],
+        },
+        message: {
+          label: "Additional message",
+          placeholder:
+            "Tell us about your athletic and academic goals, previous experience, specific questions, etc.",
+        },
+      },
+      submitButton: "Send information request",
+      consent: {
+        text: "By submitting this form, you agree to be contacted about IMG Academy programmes.",
+        highlight: "Your information is 100% protected.",
+      },
+    },
+    scheduleCta: {
+      title: "Prefer a personal call?",
+      description:
+        "Schedule a free 30-minute call to answer all your questions and learn more about the programmes that best fit your goals.",
+      button: "Schedule a free call",
+    },
+  },
+};
+
 export const boardingTranslations: TranslationMap<BoardingTranslation> = {
   es: {
     title: "BOARDING SCHOOL",
@@ -601,6 +1099,21 @@ export const getAcademicsTranslation = (language: SupportedLanguage) =>
 
 export const getProgramsTranslation = (language: SupportedLanguage) =>
   programsTranslations[language];
+
+export const getCurrentOffersTranslation = (language: SupportedLanguage) =>
+  currentOffersTranslations[language];
+
+export const getImgCampsTranslation = (language: SupportedLanguage) =>
+  imgCampsTranslations[language];
+
+export const getSportsEducationTranslation = (language: SupportedLanguage) =>
+  sportsEducationTranslations[language];
+
+export const getSportsCarouselTranslation = (language: SupportedLanguage) =>
+  sportsCarouselTranslations[language];
+
+export const getContactTranslation = (language: SupportedLanguage) =>
+  contactTranslations[language];
 
 export const getBoardingTranslation = (language: SupportedLanguage) =>
   boardingTranslations[language];
