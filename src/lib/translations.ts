@@ -154,6 +154,184 @@ type CampsPageTranslation = {
   heroTitle: [string, string];
 };
 
+type EnhancedContactFormTranslation = {
+  badge: string;
+  title: string;
+  description: string;
+  contactCard: {
+    title: string;
+    subtitle: string;
+    phoneLabel: string;
+    phoneValue: string;
+    emailLabel: string;
+    emailValue: string;
+    locationLabel: string;
+    locationValue: string;
+    stats: Array<{ value: string; description: string }>;
+  };
+  form: {
+    cardTitle: string;
+    cardDescription: string;
+    personalInfo: {
+      firstName: string;
+      lastName: string;
+      email: string;
+      phone: string;
+      country: string;
+      age: string;
+      agePlaceholder: string;
+      ageGroups: string[];
+    };
+    sports: {
+      label: string;
+      helper: string;
+      options: Array<{ id: string; label: string }>;
+    };
+    programType: {
+      label: string;
+      options: Array<{ id: string; name: string; description: string }>;
+    };
+    experience: {
+      label: string;
+      placeholder: string;
+      options: Array<{ id: string; label: string }>;
+    };
+    startDate: {
+      label: string;
+      placeholder: string;
+      options: Array<{ id: string; label: string }>;
+    };
+    message: {
+      label: string;
+      placeholder: string;
+    };
+    consent: {
+      parent: string;
+      newsletter: string;
+    };
+    submit: {
+      default: string;
+      sending: string;
+    };
+  };
+  toast: {
+    successTitle: string;
+    successDescription: string;
+  };
+};
+
+type InquiryModalTranslation = {
+  defaultInquiryType: string;
+  contactInfo: {
+    title: string;
+    whatsapp: string;
+    emailLabel: string;
+    emailValue: string;
+  };
+  form: {
+    nameLabel: string;
+    emailLabel: string;
+    countryLabel: string;
+    countryPlaceholder: string;
+    phoneLabel: string;
+    phoneCodePlaceholder: string;
+    phonePlaceholder: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    cancel: string;
+    submit: string;
+  };
+  toasts: {
+    successTitle: string;
+    successDescription: string;
+    errorTitle: string;
+    errorDescription: string;
+  };
+  countries: Record<string, string> & { OTHER: string };
+};
+
+type PriceCalculatorTranslation = {
+  title: string;
+  description: string;
+  fields: {
+    sportLabel: string;
+    sportPlaceholder: string;
+    programLabel: string;
+    programPlaceholder: string;
+    regionLabel: string;
+    regionPlaceholder: string;
+    regionOption: string;
+  };
+  duration: {
+    label: string;
+    unitSingular: string;
+    unitPlural: string;
+    minLabel: string;
+    maxLabel: string;
+  };
+  buttons: {
+    calculate: string;
+    reset: string;
+    contact: string;
+  };
+  emptyState: string;
+  note: string;
+  results: {
+    badge: string;
+    baseLabel: string;
+    discountLabel: string;
+    finalLabel: string;
+    includesTitle: string;
+    includesItems: string[];
+  };
+  sports: Array<{ id: string; label: string; basePrice: number }>;
+  programs: Array<{ id: string; name: string; multiplier: number }>;
+  regions: Array<{ id: string; name: string; discount: number }>;
+};
+
+type SportSelectionQuizTranslation = {
+  questions: Array<{
+    id: number;
+    prompt: string;
+    options: Array<{ id: string; label: string; sports: string[] }>;
+  }>;
+  progress: {
+    badge: string;
+    status: string;
+  };
+  navigation: {
+    previous: string;
+    next: string;
+    results: string;
+  };
+  results: {
+    title: string;
+    description: string;
+    bestBadge: string;
+    optionLabel: string;
+    detailsButton: string;
+    restartButton: string;
+    contactButton: string;
+  };
+  sportDetails: Record<string, { name: string }>;
+};
+
+type CampComparisonRow = {
+  kind: "header" | "detail";
+  title?: string;
+  subtitle?: string;
+  label?: string;
+  checks: [boolean, boolean, boolean, boolean];
+};
+
+type CampComparisonTranslation = {
+  intro: string;
+  helpTitle: string;
+  sections: Array<{
+    rows: CampComparisonRow[];
+  }>;
+};
+
 type AcademicsTranslation = {
   placeholderTitle: string;
   placeholderSubtitle: string;
@@ -1623,6 +1801,688 @@ export const campsPageTranslations: TranslationMap<CampsPageTranslation> = {
   },
 };
 
+export const enhancedContactFormTranslations: TranslationMap<EnhancedContactFormTranslation> = {
+  es: {
+    badge: "CONTACTO PERSONALIZADO",
+    title: "Comienza Tu Futuro Deportivo",
+    description:
+      "Nuestro representante en Latinoamérica está listo para ayudarte a dar el siguiente paso hacia la excelencia deportiva.",
+    contactCard: {
+      title: "Representante Oficial",
+      subtitle: "IMG Academy Latinoamérica",
+      phoneLabel: "Teléfono",
+      phoneValue: "+57 123 456 7890",
+      emailLabel: "Email",
+      emailValue: "admisiones.latam@imgacademy.com",
+      locationLabel: "Ubicación",
+      locationValue: "Bradenton, Florida, USA",
+      stats: [
+        { value: "9 Deportes", description: "de Élite" },
+        { value: "1200+", description: "Estudiantes" },
+        { value: "25%", description: "NCAA D1" },
+      ],
+    },
+    form: {
+      cardTitle: "Solicitar Información Personalizada",
+      cardDescription:
+        "Completa este formulario y recibe información detallada sobre programas, precios y descuentos regionales.",
+      personalInfo: {
+        firstName: "Nombre *",
+        lastName: "Apellido *",
+        email: "Email *",
+        phone: "Teléfono",
+        country: "País *",
+        age: "Edad del Estudiante *",
+        agePlaceholder: "Selecciona edad",
+        ageGroups: ["10-12 años", "13-15 años", "16-18 años", "19+ años"],
+      },
+      sports: {
+        label: "Deportes de Interés *",
+        helper: "Selecciona todos los deportes que te interesan",
+        options: [
+          { id: "tennis", label: "Tenis" },
+          { id: "golf", label: "Golf" },
+          { id: "football", label: "Fútbol Americano" },
+          { id: "basketball", label: "Baloncesto" },
+          { id: "baseball", label: "Béisbol" },
+          { id: "soccer", label: "Fútbol" },
+          { id: "lacrosse", label: "Lacrosse" },
+          { id: "track", label: "Atletismo" },
+          { id: "wrestling", label: "Lucha" },
+        ],
+      },
+      programType: {
+        label: "Tipo de Programa *",
+        options: [
+          { id: "boarding", name: "Programa de Internado", description: "Año académico completo" },
+          { id: "day", name: "Programa de Día", description: "Solo entrenamientos" },
+          { id: "camps", name: "Campamentos", description: "1-4 semanas" },
+          { id: "online", name: "Entrenamiento Online", description: "Desde casa" },
+        ],
+      },
+      experience: {
+        label: "Nivel de Experiencia",
+        placeholder: "Selecciona nivel",
+        options: [
+          { id: "beginner", label: "Principiante" },
+          { id: "intermediate", label: "Intermedio" },
+          { id: "advanced", label: "Avanzado" },
+          { id: "elite", label: "Élite" },
+        ],
+      },
+      startDate: {
+        label: "Fecha de Inicio Deseada",
+        placeholder: "Selecciona fecha",
+        options: [
+          { id: "fall2025", label: "Otoño 2025" },
+          { id: "spring2026", label: "Primavera 2026" },
+          { id: "summer2025", label: "Verano 2025" },
+          { id: "flexible", label: "Flexible" },
+        ],
+      },
+      message: {
+        label: "Mensaje Adicional",
+        placeholder:
+          "Cuéntanos sobre tus objetivos deportivos, preguntas específicas, o cualquier información adicional...",
+      },
+      consent: {
+        parent:
+          "Confirmo que tengo autorización parental para solicitar información (requerido para menores de 18 años)*",
+        newsletter:
+          "Deseo recibir actualizaciones sobre programas, eventos y noticias de IMG Academy",
+      },
+      submit: {
+        default: "Solicitar Información Gratuita",
+        sending: "Enviando...",
+      },
+    },
+    toast: {
+      successTitle: "¡Solicitud Enviada!",
+      successDescription: "Nuestro representante te contactará en las próximas 24 horas.",
+    },
+  },
+  en: {
+    badge: "PERSONALIZED CONTACT",
+    title: "Start Your Sports Future",
+    description:
+      "Our Latin America representative is ready to help you take the next step toward athletic excellence.",
+    contactCard: {
+      title: "Official Representative",
+      subtitle: "IMG Academy Latin America",
+      phoneLabel: "Phone",
+      phoneValue: "+57 123 456 7890",
+      emailLabel: "Email",
+      emailValue: "admisiones.latam@imgacademy.com",
+      locationLabel: "Location",
+      locationValue: "Bradenton, Florida, USA",
+      stats: [
+        { value: "9 Sports", description: "Elite" },
+        { value: "1200+", description: "Students" },
+        { value: "25%", description: "NCAA D1" },
+      ],
+    },
+    form: {
+      cardTitle: "Request Personalized Information",
+      cardDescription:
+        "Complete this form to receive detailed information about programs, pricing, and regional discounts.",
+      personalInfo: {
+        firstName: "First Name *",
+        lastName: "Last Name *",
+        email: "Email *",
+        phone: "Phone",
+        country: "Country *",
+        age: "Student Age *",
+        agePlaceholder: "Select age",
+        ageGroups: ["10-12 years", "13-15 years", "16-18 years", "19+ years"],
+      },
+      sports: {
+        label: "Sports of Interest *",
+        helper: "Select all the sports you're interested in",
+        options: [
+          { id: "tennis", label: "Tennis" },
+          { id: "golf", label: "Golf" },
+          { id: "football", label: "American Football" },
+          { id: "basketball", label: "Basketball" },
+          { id: "baseball", label: "Baseball" },
+          { id: "soccer", label: "Soccer" },
+          { id: "lacrosse", label: "Lacrosse" },
+          { id: "track", label: "Track & Field" },
+          { id: "wrestling", label: "Wrestling" },
+        ],
+      },
+      programType: {
+        label: "Program Type *",
+        options: [
+          { id: "boarding", name: "Boarding Program", description: "Full academic year" },
+          { id: "day", name: "Day Program", description: "Training only" },
+          { id: "camps", name: "Camps", description: "1-4 weeks" },
+          { id: "online", name: "Online Training", description: "From home" },
+        ],
+      },
+      experience: {
+        label: "Experience Level",
+        placeholder: "Select level",
+        options: [
+          { id: "beginner", label: "Beginner" },
+          { id: "intermediate", label: "Intermediate" },
+          { id: "advanced", label: "Advanced" },
+          { id: "elite", label: "Elite" },
+        ],
+      },
+      startDate: {
+        label: "Preferred Start Date",
+        placeholder: "Select date",
+        options: [
+          { id: "fall2025", label: "Fall 2025" },
+          { id: "spring2026", label: "Spring 2026" },
+          { id: "summer2025", label: "Summer 2025" },
+          { id: "flexible", label: "Flexible" },
+        ],
+      },
+      message: {
+        label: "Additional Message",
+        placeholder:
+          "Tell us about your athletic goals, specific questions, or any extra information...",
+      },
+      consent: {
+        parent:
+          "I confirm I have parental authorization to request information (required for students under 18).*",
+        newsletter: "I'd like to receive updates about programs, events, and IMG Academy news.",
+      },
+      submit: {
+        default: "Request Free Information",
+        sending: "Sending...",
+      },
+    },
+    toast: {
+      successTitle: "Request Sent!",
+      successDescription: "Our representative will contact you within the next 24 hours.",
+    },
+  },
+};
+
+export const inquiryModalTranslations: TranslationMap<InquiryModalTranslation> = {
+  es: {
+    defaultInquiryType: "Consulta General",
+    contactInfo: {
+      title: "Información de Contacto",
+      whatsapp: "WhatsApp",
+      emailLabel: "Email",
+      emailValue: "comercial@sportsacademy.co",
+    },
+    form: {
+      nameLabel: "Nombre Completo *",
+      emailLabel: "Email *",
+      countryLabel: "País *",
+      countryPlaceholder: "Selecciona tu país",
+      phoneLabel: "Teléfono",
+      phoneCodePlaceholder: "+57",
+      phonePlaceholder: "Número de teléfono",
+      messageLabel: "Mensaje *",
+      messagePlaceholder: "Cuéntanos más sobre tu consulta...",
+      cancel: "Cancelar",
+      submit: "Enviar Consulta",
+    },
+    toasts: {
+      successTitle: "Consulta enviada",
+      successDescription: "Nos pondremos en contacto contigo pronto.",
+      errorTitle: "Error",
+      errorDescription: "Hubo un problema al enviar tu consulta. Por favor, inténtalo de nuevo.",
+    },
+    countries: {
+      CL: "Chile",
+      CO: "Colombia",
+      CR: "Costa Rica",
+      EC: "Ecuador",
+      SV: "El Salvador",
+      AE: "Emiratos Árabes",
+      ES: "España",
+      US: "Estados Unidos",
+      GT: "Guatemala",
+      HN: "Honduras",
+      JO: "Jordania",
+      MX: "México",
+      NI: "Nicaragua",
+      PA: "Panamá",
+      PE: "Perú",
+      PT: "Portugal",
+      CH: "Suiza",
+      TT: "Trinidad y Tobago",
+      OTHER: "Otro país",
+    },
+  },
+  en: {
+    defaultInquiryType: "General Inquiry",
+    contactInfo: {
+      title: "Contact Information",
+      whatsapp: "WhatsApp",
+      emailLabel: "Email",
+      emailValue: "comercial@sportsacademy.co",
+    },
+    form: {
+      nameLabel: "Full Name *",
+      emailLabel: "Email *",
+      countryLabel: "Country *",
+      countryPlaceholder: "Select your country",
+      phoneLabel: "Phone",
+      phoneCodePlaceholder: "+57",
+      phonePlaceholder: "Phone number",
+      messageLabel: "Message *",
+      messagePlaceholder: "Tell us more about your inquiry...",
+      cancel: "Cancel",
+      submit: "Send Inquiry",
+    },
+    toasts: {
+      successTitle: "Inquiry sent",
+      successDescription: "We will contact you shortly.",
+      errorTitle: "Error",
+      errorDescription: "We couldn't send your inquiry. Please try again.",
+    },
+    countries: {
+      CL: "Chile",
+      CO: "Colombia",
+      CR: "Costa Rica",
+      EC: "Ecuador",
+      SV: "El Salvador",
+      AE: "United Arab Emirates",
+      ES: "Spain",
+      US: "United States",
+      GT: "Guatemala",
+      HN: "Honduras",
+      JO: "Jordan",
+      MX: "Mexico",
+      NI: "Nicaragua",
+      PA: "Panama",
+      PE: "Peru",
+      PT: "Portugal",
+      CH: "Switzerland",
+      TT: "Trinidad and Tobago",
+      OTHER: "Other country",
+    },
+  },
+};
+
+export const priceCalculatorTranslations: TranslationMap<PriceCalculatorTranslation> = {
+  es: {
+    title: "Calculadora de Precios",
+    description:
+      "Obtén una estimación personalizada de costos para tu programa deportivo con descuentos regionales incluidos",
+    fields: {
+      sportLabel: "Deporte de Interés",
+      sportPlaceholder: "Selecciona un deporte",
+      programLabel: "Tipo de Programa",
+      programPlaceholder: "Selecciona tipo de programa",
+      regionLabel: "País de Origen",
+      regionPlaceholder: "Selecciona tu país",
+      regionOption: "{{name}} - {{discount}}% descuento",
+    },
+    duration: {
+      label: "Duración: {{count}} {{unit}}",
+      unitSingular: "mes",
+      unitPlural: "meses",
+      minLabel: "1 mes",
+      maxLabel: "12 meses",
+    },
+    buttons: {
+      calculate: "Calcular Precio",
+      reset: "Nueva Consulta",
+      contact: "Solicitar Info",
+    },
+    emptyState: "Selecciona las opciones para ver tu estimación personalizada",
+    note:
+      "Nota: Esta es una estimación basada en precios estándar. Los costos finales pueden variar según factores adicionales como becas académicas, descuentos por hermanos, y promociones especiales. Contacta a nuestro representante para obtener una cotización oficial.",
+    results: {
+      badge: "Estimación Personalizada",
+      baseLabel: "Precio Base:",
+      discountLabel: "Descuento Regional ({{percent}}%):",
+      finalLabel: "Precio Final:",
+      includesTitle: "Incluye:",
+      includesItems: [
+        "Entrenamiento deportivo profesional",
+        "Uso de instalaciones de élite",
+        "Supervisión académica (programas de internado)",
+        "Análisis de rendimiento",
+        "Apoyo nutricional",
+      ],
+    },
+    sports: [
+      { id: "tennis", label: "Tenis", basePrice: 45000 },
+      { id: "golf", label: "Golf", basePrice: 55000 },
+      { id: "football", label: "Fútbol Americano", basePrice: 52000 },
+      { id: "basketball", label: "Baloncesto", basePrice: 46000 },
+      { id: "baseball", label: "Béisbol", basePrice: 47000 },
+      { id: "soccer", label: "Fútbol", basePrice: 43000 },
+      { id: "lacrosse", label: "Lacrosse", basePrice: 44000 },
+      { id: "track", label: "Atletismo", basePrice: 41000 },
+      { id: "wrestling", label: "Lucha", basePrice: 42000 },
+    ],
+    programs: [
+      { id: "boarding", name: "Programa de Internado", multiplier: 1 },
+      { id: "day", name: "Programa de Día", multiplier: 0.6 },
+      { id: "camps", name: "Campamentos", multiplier: 0.15 },
+      { id: "online", name: "Entrenamiento Online", multiplier: 0.05 },
+    ],
+    regions: [
+      { id: "mexico", name: "México", discount: 15 },
+      { id: "colombia", name: "Colombia", discount: 20 },
+      { id: "brazil", name: "Brasil", discount: 18 },
+      { id: "argentina", name: "Argentina", discount: 22 },
+      { id: "chile", name: "Chile", discount: 17 },
+      { id: "peru", name: "Perú", discount: 25 },
+      { id: "other", name: "Otro País", discount: 10 },
+    ],
+  },
+  en: {
+    title: "Price Calculator",
+    description:
+      "Get a personalized cost estimate for your sports program including regional discounts.",
+    fields: {
+      sportLabel: "Sport of Interest",
+      sportPlaceholder: "Select a sport",
+      programLabel: "Program Type",
+      programPlaceholder: "Select a program type",
+      regionLabel: "Country of Origin",
+      regionPlaceholder: "Select your country",
+      regionOption: "{{name}} - {{discount}}% discount",
+    },
+    duration: {
+      label: "Duration: {{count}} {{unit}}",
+      unitSingular: "month",
+      unitPlural: "months",
+      minLabel: "1 month",
+      maxLabel: "12 months",
+    },
+    buttons: {
+      calculate: "Calculate Price",
+      reset: "New Estimate",
+      contact: "Request Info",
+    },
+    emptyState: "Choose your options to see your personalized estimate",
+    note:
+      "Note: This estimate is based on standard pricing. Final costs may vary depending on academic scholarships, sibling discounts, and special promotions. Contact our representative for an official quote.",
+    results: {
+      badge: "Personalized Estimate",
+      baseLabel: "Base Price:",
+      discountLabel: "Regional Discount ({{percent}}%):",
+      finalLabel: "Final Price:",
+      includesTitle: "Includes:",
+      includesItems: [
+        "Professional sports training",
+        "Access to elite facilities",
+        "Academic supervision (boarding programs)",
+        "Performance analysis",
+        "Nutritional support",
+      ],
+    },
+    sports: [
+      { id: "tennis", label: "Tennis", basePrice: 45000 },
+      { id: "golf", label: "Golf", basePrice: 55000 },
+      { id: "football", label: "American Football", basePrice: 52000 },
+      { id: "basketball", label: "Basketball", basePrice: 46000 },
+      { id: "baseball", label: "Baseball", basePrice: 47000 },
+      { id: "soccer", label: "Soccer", basePrice: 43000 },
+      { id: "lacrosse", label: "Lacrosse", basePrice: 44000 },
+      { id: "track", label: "Track & Field", basePrice: 41000 },
+      { id: "wrestling", label: "Wrestling", basePrice: 42000 },
+    ],
+    programs: [
+      { id: "boarding", name: "Boarding Program", multiplier: 1 },
+      { id: "day", name: "Day Program", multiplier: 0.6 },
+      { id: "camps", name: "Camps", multiplier: 0.15 },
+      { id: "online", name: "Online Training", multiplier: 0.05 },
+    ],
+    regions: [
+      { id: "mexico", name: "Mexico", discount: 15 },
+      { id: "colombia", name: "Colombia", discount: 20 },
+      { id: "brazil", name: "Brazil", discount: 18 },
+      { id: "argentina", name: "Argentina", discount: 22 },
+      { id: "chile", name: "Chile", discount: 17 },
+      { id: "peru", name: "Peru", discount: 25 },
+      { id: "other", name: "Other Country", discount: 10 },
+    ],
+  },
+};
+
+export const sportSelectionQuizTranslations: TranslationMap<SportSelectionQuizTranslation> = {
+  es: {
+    questions: [
+      {
+        id: 1,
+        prompt: "¿Cuál es tu nivel de experiencia deportiva?",
+        options: [
+          { id: "beginner", label: "Principiante", sports: ["tennis", "golf", "track"] },
+          { id: "intermediate", label: "Intermedio", sports: ["basketball", "soccer", "baseball"] },
+          { id: "advanced", label: "Avanzado", sports: ["football", "lacrosse", "wrestling"] },
+        ],
+      },
+      {
+        id: 2,
+        prompt: "¿Prefieres deportes individuales o de equipo?",
+        options: [
+          { id: "individual", label: "Individual", sports: ["tennis", "golf", "track", "wrestling"] },
+          { id: "team", label: "De equipo", sports: ["football", "basketball", "baseball", "soccer", "lacrosse"] },
+        ],
+      },
+      {
+        id: 3,
+        prompt: "¿Qué tipo de entrenamiento prefieres?",
+        options: [
+          { id: "technical", label: "Técnico y preciso", sports: ["tennis", "golf", "baseball"] },
+          { id: "physical", label: "Físico e intenso", sports: ["football", "wrestling", "track"] },
+          { id: "tactical", label: "Táctico y estratégico", sports: ["basketball", "soccer", "lacrosse"] },
+        ],
+      },
+    ],
+    progress: {
+      badge: "Pregunta {{current}} de {{total}}",
+      status: "{{percent}}% completado",
+    },
+    navigation: {
+      previous: "Anterior",
+      next: "Siguiente",
+      results: "Ver Resultados",
+    },
+    results: {
+      title: "¡Tus Deportes Recomendados!",
+      description: "Basado en tus respuestas, estos deportes son perfectos para ti:",
+      bestBadge: "Mejor Opción",
+      optionLabel: "Opción {{index}}",
+      detailsButton: "Ver Detalles",
+      restartButton: "Repetir Quiz",
+      contactButton: "Hablar con Representante",
+    },
+    sportDetails: {
+      tennis: { name: "Tenis" },
+      golf: { name: "Golf" },
+      football: { name: "Fútbol Americano" },
+      basketball: { name: "Baloncesto" },
+      baseball: { name: "Béisbol" },
+      soccer: { name: "Fútbol" },
+      lacrosse: { name: "Lacrosse" },
+      track: { name: "Atletismo" },
+      wrestling: { name: "Lucha" },
+    },
+  },
+  en: {
+    questions: [
+      {
+        id: 1,
+        prompt: "What is your level of sports experience?",
+        options: [
+          { id: "beginner", label: "Beginner", sports: ["tennis", "golf", "track"] },
+          { id: "intermediate", label: "Intermediate", sports: ["basketball", "soccer", "baseball"] },
+          { id: "advanced", label: "Advanced", sports: ["football", "lacrosse", "wrestling"] },
+        ],
+      },
+      {
+        id: 2,
+        prompt: "Do you prefer individual or team sports?",
+        options: [
+          { id: "individual", label: "Individual", sports: ["tennis", "golf", "track", "wrestling"] },
+          { id: "team", label: "Team", sports: ["football", "basketball", "baseball", "soccer", "lacrosse"] },
+        ],
+      },
+      {
+        id: 3,
+        prompt: "What type of training do you prefer?",
+        options: [
+          { id: "technical", label: "Technical and precise", sports: ["tennis", "golf", "baseball"] },
+          { id: "physical", label: "Physical and intense", sports: ["football", "wrestling", "track"] },
+          { id: "tactical", label: "Tactical and strategic", sports: ["basketball", "soccer", "lacrosse"] },
+        ],
+      },
+    ],
+    progress: {
+      badge: "Question {{current}} of {{total}}",
+      status: "{{percent}}% complete",
+    },
+    navigation: {
+      previous: "Previous",
+      next: "Next",
+      results: "View Results",
+    },
+    results: {
+      title: "Your Recommended Sports",
+      description: "Based on your answers, these sports are a great fit for you:",
+      bestBadge: "Top Choice",
+      optionLabel: "Option {{index}}",
+      detailsButton: "See Details",
+      restartButton: "Restart Quiz",
+      contactButton: "Speak with a Representative",
+    },
+    sportDetails: {
+      tennis: { name: "Tennis" },
+      golf: { name: "Golf" },
+      football: { name: "American Football" },
+      basketball: { name: "Basketball" },
+      baseball: { name: "Baseball" },
+      soccer: { name: "Soccer" },
+      lacrosse: { name: "Lacrosse" },
+      track: { name: "Track & Field" },
+      wrestling: { name: "Wrestling" },
+    },
+  },
+};
+
+export const campComparisonTranslations: TranslationMap<CampComparisonTranslation> = {
+  es: {
+    intro:
+      "Los campamentos de IMG Academy están diseñados para ofrecer una experiencia deportiva y educativa excepcional que desarrolla tanto las habilidades atléticas como el carácter personal de cada participante. Con instalaciones de clase mundial y entrenadores profesionales, nuestros programas combinan entrenamiento técnico avanzado, acondicionamiento físico y desarrollo mental para maximizar el potencial de cada atleta. Ofrecemos diferentes modalidades de campamentos:",
+    helpTitle: "¿Necesitas Ayuda Eligiendo Tu Programa?",
+    sections: [
+      {
+        rows: [
+          {
+            kind: "header",
+            title: "CAMPOS DEPORTIVOS SEMANALES",
+            subtitle: "En nuestro campus ubicado en Bradenton, Florida",
+            checks: [true, true, true, true],
+          },
+          {
+            kind: "detail",
+            label: "Dos sesiones de entrenamiento específico por deporte (AM/PM) por día",
+            checks: [true, true, true, true],
+          },
+          {
+            kind: "detail",
+            label: "Sesiones de fuerza y acondicionamiento, y rendimiento mental",
+            checks: [true, true, true, true],
+          },
+          {
+            kind: "detail",
+            label: "Camiseta del Campo y Mochila",
+            checks: [true, true, true, true],
+          },
+          {
+            kind: "detail",
+            label: "Membresía esencial IMG Academy+",
+            checks: [true, true, true, true],
+          },
+        ],
+      },
+      {
+        rows: [
+          {
+            kind: "header",
+            title: "ENTRENAMIENTO DE RENDIMIENTO",
+            subtitle:
+              "Entrenamiento adicional en áreas preseleccionadas como fuerza, velocidad, resistencia mental u otras disciplinas de rendimiento",
+            checks: [false, true, false, true],
+          },
+        ],
+      },
+      {
+        rows: [
+          {
+            kind: "header",
+            title: "ENTRENAMIENTO PERSONALIZADO",
+            subtitle: "Instrucción adicional 1:1 o en grupos pequeños",
+            checks: [false, false, true, true],
+          },
+        ],
+      },
+    ],
+  },
+  en: {
+    intro:
+      "IMG Academy camps are designed to deliver an exceptional sports and academic experience that develops both athletic skills and personal character for every participant. With world-class facilities and professional coaches, our programs combine advanced technical training, physical conditioning, and mental development to maximise each athlete's potential. We offer several camp formats:",
+    helpTitle: "Need Help Choosing Your Program?",
+    sections: [
+      {
+        rows: [
+          {
+            kind: "header",
+            title: "WEEKLY SPORT CAMPS",
+            subtitle: "On our campus located in Bradenton, Florida",
+            checks: [true, true, true, true],
+          },
+          {
+            kind: "detail",
+            label: "Two sport-specific training sessions (AM/PM) per day",
+            checks: [true, true, true, true],
+          },
+          {
+            kind: "detail",
+            label: "Strength & conditioning and mental performance sessions",
+            checks: [true, true, true, true],
+          },
+          {
+            kind: "detail",
+            label: "Camp T-shirt and backpack",
+            checks: [true, true, true, true],
+          },
+          {
+            kind: "detail",
+            label: "Essential IMG Academy+ membership",
+            checks: [true, true, true, true],
+          },
+        ],
+      },
+      {
+        rows: [
+          {
+            kind: "header",
+            title: "PERFORMANCE TRAINING",
+            subtitle:
+              "Additional training in preselected areas such as strength, speed, mental resilience, or other performance disciplines",
+            checks: [false, true, false, true],
+          },
+        ],
+      },
+      {
+        rows: [
+          {
+            kind: "header",
+            title: "PERSONALIZED COACHING",
+            subtitle: "Additional 1:1 or small-group instruction",
+            checks: [false, false, true, true],
+          },
+        ],
+      },
+    ],
+  },
+};
+
 export const installationsTranslations: TranslationMap<InstallationsTranslation> = {
   es: {
     title: "INSTALACIONES DE CLASE MUNDIAL",
@@ -1789,3 +2649,18 @@ export const getCampDetailsTranslation = (language: SupportedLanguage) =>
 
 export const getCampsPageTranslation = (language: SupportedLanguage) =>
   campsPageTranslations[language];
+
+export const getEnhancedContactFormTranslation = (language: SupportedLanguage) =>
+  enhancedContactFormTranslations[language];
+
+export const getInquiryModalTranslation = (language: SupportedLanguage) =>
+  inquiryModalTranslations[language];
+
+export const getPriceCalculatorTranslation = (language: SupportedLanguage) =>
+  priceCalculatorTranslations[language];
+
+export const getSportSelectionQuizTranslation = (language: SupportedLanguage) =>
+  sportSelectionQuizTranslations[language];
+
+export const getCampComparisonTranslation = (language: SupportedLanguage) =>
+  campComparisonTranslations[language];
