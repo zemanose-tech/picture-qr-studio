@@ -154,6 +154,31 @@ type CampsPageTranslation = {
   heroTitle: [string, string];
 };
 
+type BenefitCardTranslation = {
+  title: string;
+  description: string;
+  items?: string[];
+};
+
+type LoyaltyBenefitsTranslation = {
+  badge: string;
+  title: string;
+  description: string;
+  cards: BenefitCardTranslation[];
+  note: string;
+};
+
+type GroupBenefitsTranslation = {
+  badge: string;
+  title: string;
+  description: string;
+  cards: BenefitCardTranslation[];
+  support: {
+    title: string;
+    description: string;
+  };
+};
+
 type SportsPageSportTranslation = {
   id: string;
   name: string;
@@ -245,6 +270,29 @@ type FacilitiesPageTranslation = {
     };
   };
   carouselAltPrefix: string;
+};
+
+type FormattedTextToken =
+  | { type: "text"; value: string }
+  | { type: "strong"; value: string }
+  | { type: "italic"; value: string }
+  | { type: "link"; value: string; href: string; external?: boolean };
+
+type StructuredParagraph = FormattedTextToken[];
+
+type AboutUsTranslation = {
+  backLabel: string;
+  heroTitle: string;
+  paragraphs: string[];
+};
+
+type PrivacyPolicyTranslation = {
+  title: string;
+  intro: StructuredParagraph;
+  bulletPoints: StructuredParagraph[];
+  withdrawal: StructuredParagraph;
+  final: StructuredParagraph;
+  backToHome: string;
 };
 
 type EnhancedContactFormTranslation = {
@@ -1894,6 +1942,164 @@ export const campsPageTranslations: TranslationMap<CampsPageTranslation> = {
   },
 };
 
+export const loyaltyBenefitsTranslations: TranslationMap<LoyaltyBenefitsTranslation> = {
+  es: {
+    badge: "Programa de lealtad",
+    title: "Beneficios para familias recurrentes",
+    description:
+      "Premiamos la confianza continua de las familias que regresan a IMG Academy año tras año.",
+    cards: [
+      {
+        title: "Créditos acumulables",
+        description:
+          "Aprovecha descuentos progresivos en nuevas inscripciones cuando hermanos o temporadas adicionales se confirmen en el mismo año.",
+        items: [
+          "Aplica para campamentos y programas de internado",
+          "Se puede transferir entre miembros de la misma familia",
+        ],
+      },
+      {
+        title: "Acceso preferencial",
+        description:
+          "Reserva con prioridad las fechas más solicitadas y asegura tu lugar en programas con cupo limitado.",
+        items: [
+          "Ventanas exclusivas de inscripción anticipada",
+          "Recordatorios personalizados antes de abrir inscripciones",
+        ],
+      },
+      {
+        title: "Acompañamiento continuo",
+        description:
+          "Recibe seguimiento dedicado del mismo asesor para mantener la experiencia IMG sin complicaciones.",
+        items: [
+          "Actualizaciones sobre documentos y requisitos vigentes",
+          "Coordinación directa con el equipo académico y deportivo",
+        ],
+      },
+    ],
+    note: "Aplican condiciones especiales para reservas confirmadas a partir de 2024.",
+  },
+  en: {
+    badge: "Loyalty programme",
+    title: "Benefits for returning families",
+    description:
+      "We reward the continued trust of families who come back to IMG Academy year after year.",
+    cards: [
+      {
+        title: "Stackable credits",
+        description:
+          "Unlock progressive discounts on new registrations when siblings or additional weeks are confirmed within the same season.",
+        items: [
+          "Applies to camps and boarding programmes",
+          "Transferable between members of the same family",
+        ],
+      },
+      {
+        title: "Priority access",
+        description:
+          "Secure the most sought-after dates first and guarantee spots in programmes with limited availability.",
+        items: [
+          "Exclusive early-enrolment windows",
+          "Personalised reminders before enrolment opens",
+        ],
+      },
+      {
+        title: "Ongoing guidance",
+        description:
+          "Work with the same advisor every season to keep the IMG experience smooth and stress-free.",
+        items: [
+          "Updates on current documentation and requirements",
+          "Direct coordination with the academic and athletics teams",
+        ],
+      },
+    ],
+    note: "Special conditions apply to reservations confirmed from 2024 onwards.",
+  },
+};
+
+export const groupBenefitsTranslations: TranslationMap<GroupBenefitsTranslation> = {
+  es: {
+    badge: "Programas para grupos",
+    title: "Ventajas para academias y equipos",
+    description:
+      "Diseñamos experiencias personalizadas para delegaciones deportivas, colegios y clubes que visitan IMG Academy juntos.",
+    cards: [
+      {
+        title: "Descuentos escalonados",
+        description:
+          "Obtén tarifas preferenciales según el tamaño del grupo y la duración de la estadía.",
+        items: [
+          "Desde 8 participantes confirmados",
+          "Opciones con pensión completa y transporte interno",
+        ],
+      },
+      {
+        title: "Programas a medida",
+        description:
+          "Creamos calendarios que combinan entrenamientos, talleres académicos y actividades de integración.",
+        items: [
+          "Evaluaciones físicas y mentales grupales",
+          "Sesiones exclusivas con entrenadores principales",
+        ],
+      },
+      {
+        title: "Logística integral",
+        description:
+          "Coordinamos alojamiento, alimentación, transporte y seguros para que solo te enfoques en el rendimiento.",
+        items: [
+          "Soporte bilingüe 24/7 para delegaciones",
+          "Planes especiales para acompañantes y staff técnico",
+        ],
+      },
+    ],
+    support: {
+      title: "Contacta a nuestro equipo especializado",
+      description:
+        "Te guiaremos paso a paso para diseñar la experiencia ideal para tu grupo.",
+    },
+  },
+  en: {
+    badge: "Group programmes",
+    title: "Advantages for academies and teams",
+    description:
+      "We customise experiences for sports delegations, schools, and clubs travelling together to IMG Academy.",
+    cards: [
+      {
+        title: "Tiered discounts",
+        description:
+          "Access preferential rates based on group size and length of stay.",
+        items: [
+          "Available from 8 confirmed participants",
+          "Full-board and on-campus transport options",
+        ],
+      },
+      {
+        title: "Tailored schedules",
+        description:
+          "Combine training sessions, academic workshops, and team-building activities in one bespoke plan.",
+        items: [
+          "Group physical and mental performance assessments",
+          "Exclusive sessions with head coaches",
+        ],
+      },
+      {
+        title: "End-to-end logistics",
+        description:
+          "We coordinate housing, meals, transport, and insurance so you can focus solely on performance.",
+        items: [
+          "24/7 bilingual support for delegations",
+          "Special arrangements for chaperones and staff",
+        ],
+      },
+    ],
+    support: {
+      title: "Speak with our dedicated team",
+      description:
+        "We will guide you step by step to design the ideal experience for your group.",
+    },
+  },
+};
+
 export const sportsPageTranslations: TranslationMap<SportsPageTranslation> = {
   es: {
     hero: {
@@ -2699,6 +2905,173 @@ export const facilitiesPageTranslations: TranslationMap<FacilitiesPageTranslatio
       },
     },
     carouselAltPrefix: "IMG Academy Facilities",
+  },
+};
+
+export const aboutUsTranslations: TranslationMap<AboutUsTranslation> = {
+  es: {
+    backLabel: "Volver",
+    heroTitle: "¿QUIENES SOMOS?",
+    paragraphs: [
+      "En Sports Academy llevamos más de 40 años dedicados exclusivamente a un solo propósito: abrir las puertas de IMG Academy a jóvenes atletas de todo el mundo.",
+      "Nuestra labor no termina con la admisión. Acompañamos a cada familia en todo el proceso, desde el primer contacto hasta la llegada al campus, y permanecemos siempre atentos durante su estancia para que los estudiantes atletas se sientan respaldados en todo momento.",
+      "Somos un equipo internacional, con presencia en diferentes países, pero unidos por una misma misión: que cada niño y cada familia vivan la experiencia IMG con la tranquilidad de estar en manos expertas y cercanas.",
+      "Sports Academy no es solo un puente hacia la mejor formación académica y deportiva, sino también un compañero de confianza en cada paso del camino.",
+    ],
+  },
+  en: {
+    backLabel: "Back",
+    heroTitle: "WHO WE ARE?",
+    paragraphs: [
+      "For more than 40 years, Sports Academy has been dedicated to a single purpose: opening the doors of IMG Academy to young athletes from around the world.",
+      "Our work doesn’t end with admission. We accompany every family throughout the entire process—from the first conversation to their arrival on campus—and remain attentive during their stay so student-athletes feel supported at all times.",
+      "We are an international team present in multiple countries yet united by one mission: ensuring that every child and family experiences IMG with the confidence of being guided by expert, caring professionals.",
+      "Sports Academy is not only a bridge to the finest academic and athletic training; it is also a trusted partner at every step of the journey.",
+    ],
+  },
+};
+
+export const privacyPolicyTranslations: TranslationMap<PrivacyPolicyTranslation> = {
+  es: {
+    title: "Política de Privacidad",
+    intro: [
+      { type: "text", value: "Al ingresar y enviar su información de contacto (nombre, email, etc.):" },
+    ],
+    bulletPoints: [
+      [
+        { type: "text", value: "Usted está aceptando recibir información acerca de los programas de " },
+        { type: "strong", value: "IMG Academy" },
+        { type: "text", value: " y otras comunicaciones de promociones y mercadeo desde " },
+        { type: "strong", value: "IMG Academy LLC" },
+        {
+          type: "text",
+          value:
+            ". Esto nos permitirá comunicarnos con usted por email para enviarle información, noticias, productos, información de los programas, actualizaciones y ofertas especiales.",
+        },
+      ],
+      [
+        { type: "text", value: "Usted está aceptando que su información sea enviada a nuestro equipo en " },
+        { type: "strong", value: "IMG Academy" },
+        { type: "text", value: " ubicada en " },
+        {
+          type: "italic",
+          value: "5650 Bollettieri Blvd., Bradenton FL 34210, Estados Unidos de América",
+        },
+        {
+          type: "text",
+          value:
+            ". Al ingresar y enviar su información de contacto, usted admite la transferencia de esta a los Estados Unidos de América para los propósitos mencionados anteriormente.",
+        },
+      ],
+      [
+        {
+          type: "text",
+          value: "Para conocer más acerca de nuestra política de privacidad, por favor acceda a: ",
+        },
+        {
+          type: "link",
+          value: "www.imgacademy.com/privacy-policy",
+          href: "https://www.imgacademy.com/privacy-policy",
+          external: true,
+        },
+      ],
+    ],
+    withdrawal: [
+      {
+        type: "text",
+        value: "Usted podrá retirar su consentimiento en cualquier momento presionando en el botón ",
+      },
+      { type: "italic", value: "“unsubscribe”" },
+      {
+        type: "text",
+        value: " incluido en nuestros emails o enviando su petición al correo: ",
+      },
+      {
+        type: "link",
+        value: "info@imgacademy.com",
+        href: "mailto:info@imgacademy.com",
+      },
+    ],
+    final: [
+      {
+        type: "text",
+        value:
+          "Usted admite que ha leído cuidadosamente y entendido el contenido de esta aceptación y que a su voluntad está ingresando y enviando su información de contacto para los propósitos ya mencionados.",
+      },
+    ],
+    backToHome: "← Volver al inicio",
+  },
+  en: {
+    title: "Privacy Policy",
+    intro: [
+      {
+        type: "text",
+        value: "By submitting your contact information (name, email, etc.):",
+      },
+    ],
+    bulletPoints: [
+      [
+        { type: "text", value: "You agree to receive information about " },
+        { type: "strong", value: "IMG Academy" },
+        { type: "text", value: " programmes and other promotional communications from " },
+        { type: "strong", value: "IMG Academy LLC" },
+        {
+          type: "text",
+          value:
+            ". This allows us to contact you by email to share information, news, products, programme details, updates, and special offers.",
+        },
+      ],
+      [
+        { type: "text", value: "You agree that your information will be sent to our team at " },
+        { type: "strong", value: "IMG Academy" },
+        { type: "text", value: " located at " },
+        {
+          type: "italic",
+          value: "5650 Bollettieri Blvd., Bradenton FL 34210, United States of America",
+        },
+        {
+          type: "text",
+          value:
+            ". By submitting your contact information, you acknowledge the transfer of this data to the United States for the purposes mentioned above.",
+        },
+      ],
+      [
+        {
+          type: "text",
+          value: "To learn more about our privacy policy, please visit: ",
+        },
+        {
+          type: "link",
+          value: "www.imgacademy.com/privacy-policy",
+          href: "https://www.imgacademy.com/privacy-policy",
+          external: true,
+        },
+      ],
+    ],
+    withdrawal: [
+      {
+        type: "text",
+        value: "You may withdraw your consent at any time by clicking the ",
+      },
+      { type: "italic", value: "“unsubscribe”" },
+      {
+        type: "text",
+        value: " button included in our emails or by sending your request to: ",
+      },
+      {
+        type: "link",
+        value: "info@imgacademy.com",
+        href: "mailto:info@imgacademy.com",
+      },
+    ],
+    final: [
+      {
+        type: "text",
+        value:
+          "You acknowledge that you have carefully read and understood this consent and that you willingly submit your contact information for the purposes mentioned above.",
+      },
+    ],
+    backToHome: "← Back to home",
   },
 };
 
@@ -3551,6 +3924,12 @@ export const getCampDetailsTranslation = (language: SupportedLanguage) =>
 export const getCampsPageTranslation = (language: SupportedLanguage) =>
   campsPageTranslations[language];
 
+export const getLoyaltyBenefitsTranslation = (language: SupportedLanguage) =>
+  loyaltyBenefitsTranslations[language];
+
+export const getGroupBenefitsTranslation = (language: SupportedLanguage) =>
+  groupBenefitsTranslations[language];
+
 export const getEnhancedContactFormTranslation = (language: SupportedLanguage) =>
   enhancedContactFormTranslations[language];
 
@@ -3580,3 +3959,11 @@ export const getBoardingPageTranslation = (language: SupportedLanguage) =>
 
 export const getFacilitiesPageTranslation = (language: SupportedLanguage) =>
   facilitiesPageTranslations[language];
+
+export const getAboutUsTranslation = (language: SupportedLanguage) =>
+  aboutUsTranslations[language];
+
+export const getPrivacyPolicyTranslation = (language: SupportedLanguage) =>
+  privacyPolicyTranslations[language];
+
+export type { FormattedTextToken };
