@@ -2,17 +2,18 @@ import AutoScrollCarousel from "@/components/AutoScrollCarousel";
 
 interface SportImageCarouselProps {
   sportName: string;
+  altPrefix?: string;
 }
 
-const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
+const SportImageCarousel = ({ sportName, altPrefix }: SportImageCarouselProps) => {
   // Get images based on sport type
   const getCarouselImages = () => {
-    if (sportName === "Tenis") {
+    if (sportName === "Tenis" || sportName === "Tennis") {
       // Tennis carousel images (13 images)
       return Array.from({ length: 13 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/tennis_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Tenis ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Tenis"} ${i + 1}`,
       }));
     }
     
@@ -21,7 +22,7 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
       return Array.from({ length: 17 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/golf_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Golf ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Golf"} ${i + 1}`,
       }));
     }
     
@@ -30,7 +31,7 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
       return Array.from({ length: 7 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/lacrosse_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Lacrosse ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Lacrosse"} ${i + 1}`,
       }));
     }
     
@@ -39,7 +40,7 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
       return Array.from({ length: 10 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/performance_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Performance ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Performance"} ${i + 1}`,
       }));
     }
     
@@ -48,7 +49,7 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
       return Array.from({ length: 10 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/soccer_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Fútbol ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Fútbol"} ${i + 1}`,
       }));
     }
     
@@ -57,7 +58,7 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
       return Array.from({ length: 23 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/track_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Atletismo ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Atletismo"} ${i + 1}`,
       }));
     }
     
@@ -66,7 +67,7 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
       return Array.from({ length: 16 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/baseball_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Béisbol ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Béisbol"} ${i + 1}`,
       }));
     }
     
@@ -75,7 +76,7 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
       return Array.from({ length: 9 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/basketball_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Baloncesto ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Baloncesto"} ${i + 1}`,
       }));
     }
     
@@ -84,16 +85,20 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
       return Array.from({ length: 15 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/football_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Fútbol Americano ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Fútbol Americano"} ${i + 1}`,
       }));
     }
     
-    if (sportName === "Adultos" || sportName === "Adult Programs" || sportName === "Programas de Adultos") {
+    if (
+      sportName === "Adultos" ||
+      sportName === "Adult Programs" ||
+      sportName === "Programas de Adultos"
+    ) {
       // Adult programs carousel images (8 images)
       return Array.from({ length: 8 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/adultos_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Programas de Adultos ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Programas de Adultos"} ${i + 1}`,
       }));
     }
 
@@ -102,7 +107,7 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
       return Array.from({ length: 7 }, (_, i) => ({
         id: i + 1,
         image: `/carousel_images/softball_carousel/${i + 1}.jpg`,
-        alt: `Instalaciones de Softball ${i + 1}`
+        alt: `${altPrefix ?? "Instalaciones de Softball"} ${i + 1}`,
       }));
     }
     
@@ -110,7 +115,7 @@ const SportImageCarousel = ({ sportName }: SportImageCarouselProps) => {
     return Array.from({ length: 5 }, (_, i) => ({
       id: i + 1,
       image: `/carousel_images/camps_carousel/1.JPG`,
-      alt: `Instalaciones de ${sportName} ${i + 1}`
+      alt: `${altPrefix ?? `Instalaciones de ${sportName}`} ${i + 1}`,
     }));
   };
 

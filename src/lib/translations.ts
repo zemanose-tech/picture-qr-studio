@@ -154,6 +154,99 @@ type CampsPageTranslation = {
   heroTitle: [string, string];
 };
 
+type SportsPageSportTranslation = {
+  id: string;
+  name: string;
+  description: string;
+  highlights: string[];
+  buttonLabel: string;
+  imageAlt: string;
+};
+
+type SportsPageTranslation = {
+  hero: {
+    title: string;
+    description: string;
+  };
+  sports: SportsPageSportTranslation[];
+  cta: {
+    title: string;
+    description: string;
+    button: string;
+  };
+};
+
+type SportDetailProgramTranslation = {
+  name: string;
+  description: string;
+  carouselAltPrefix: string;
+  videoTitle?: string;
+};
+
+type SportDetailTranslation = {
+  backLabel: string;
+  notFound: string;
+  inquiry: {
+    titleTemplate: string;
+    description: string;
+    button: string;
+    inquiryTypeTemplate: string;
+  };
+  programs: Record<string, SportDetailProgramTranslation>;
+};
+
+type AdultProgramsTranslation = {
+  hero: {
+    title: string;
+    subtitle: string;
+  };
+  description: string;
+  carouselName: string;
+  carouselAltPrefix: string;
+  inquiry: {
+    title: string;
+    description: string;
+    button: string;
+    inquiryType: string;
+  };
+};
+
+type BoardingPageTranslation = {
+  carouselAltPrefix: string;
+  hero: {
+    lines: [string, string];
+  };
+  paragraphs: string[];
+  stat: {
+    prefix: string;
+    value: string;
+    suffix: string;
+  };
+  inquiry: {
+    title: string;
+    description: string;
+    button: string;
+    inquiryType: string;
+  };
+};
+
+type FacilitiesPageTranslation = {
+  videoTitle: string;
+  hero: {
+    heading: string;
+  };
+  campusSection: {
+    subtitle: string;
+    paragraphs: string[];
+    cards: Array<{ title: string; description: string }>;
+    highlight: {
+      title: string;
+      description: string;
+    };
+  };
+  carouselAltPrefix: string;
+};
+
 type EnhancedContactFormTranslation = {
   badge: string;
   title: string;
@@ -1801,6 +1894,814 @@ export const campsPageTranslations: TranslationMap<CampsPageTranslation> = {
   },
 };
 
+export const sportsPageTranslations: TranslationMap<SportsPageTranslation> = {
+  es: {
+    hero: {
+      title: "Programas Deportivos",
+      description: "Elige un deporte para ver información detallada del programa",
+    },
+    sports: [
+      {
+        id: "tennis",
+        name: "Tenis",
+        description:
+          "Programa de entrenamiento de élite en tenis con instalaciones de clase mundial",
+        highlights: [
+          "12 canchas de tenis",
+          "Entrenadores profesionales",
+          "Análisis de video",
+          "Preparación física especializada",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Tenis",
+      },
+      {
+        id: "golf",
+        name: "Golf",
+        description:
+          "Campo de golf de 18 hoyos diseñado para el desarrollo integral del golfista",
+        highlights: [
+          "Campo de 18 hoyos",
+          "Driving range",
+          "Putting green",
+          "Short game area",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Golf",
+      },
+      {
+        id: "soccer",
+        name: "Fútbol",
+        description: "Entrenamiento técnico y táctico del fútbol moderno",
+        highlights: [
+          "Campos de césped natural",
+          "Entrenamiento táctico",
+          "Preparación física",
+          "Scout universitario",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Fútbol",
+      },
+      {
+        id: "basketball",
+        name: "Baloncesto",
+        description:
+          "Desarrollo de habilidades fundamentales y avanzadas del baloncesto",
+        highlights: [
+          "Gimnasios profesionales",
+          "Entrenamiento individual",
+          "Scrimmages competitivos",
+          "Desarrollo mental",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Baloncesto",
+      },
+      {
+        id: "volleyball",
+        name: "Voleibol",
+        description:
+          "Programa integral de voleibol con técnicas avanzadas y trabajo en equipo",
+        highlights: [
+          "Canchas cubiertas",
+          "Entrenamiento técnico",
+          "Trabajo en equipo",
+          "Competencias universitarias",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Voleibol",
+      },
+      {
+        id: "track",
+        name: "Atletismo",
+        description:
+          "Entrenamiento en pista y campo para todas las disciplinas",
+        highlights: [
+          "Pista de 400m",
+          "Zona de saltos",
+          "Lanzamientos",
+          "Preparación olímpica",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Atletismo",
+      },
+      {
+        id: "performance",
+        name: "Performance",
+        description:
+          "Entrenamiento de alto rendimiento para optimizar el desempeño atlético",
+        highlights: [
+          "Análisis biomecánico",
+          "Preparación física",
+          "Recuperación deportiva",
+          "Nutrición especializada",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Performance",
+      },
+      {
+        id: "football",
+        name: "Fútbol Americano",
+        description:
+          "Entrenamiento completo para futuros atletas universitarios",
+        highlights: [
+          "Campo de práctica",
+          "Sala de pesas",
+          "Análisis táctico",
+          "Preparación para becas",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Fútbol Americano",
+      },
+      {
+        id: "baseball",
+        name: "Béisbol",
+        description:
+          "Programa integral de béisbol con enfoque en todas las posiciones",
+        highlights: [
+          "Diamantes de práctica",
+          "Jaulas de bateo",
+          "Análisis biomecánico",
+          "Desarrollo de lanzadores",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Béisbol",
+      },
+      {
+        id: "softball",
+        name: "Softball",
+        description:
+          "Desarrollo completo en softball con enfoque en habilidades específicas",
+        highlights: [
+          "Diamantes especializados",
+          "Técnica de bateo",
+          "Pitcheo femenino",
+          "Estrategia de juego",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Softball",
+      },
+      {
+        id: "lacrosse",
+        name: "Lacrosse",
+        description:
+          "Desarrollo completo en lacrosse masculino y femenino",
+        highlights: [
+          "Campos especializados",
+          "Técnica avanzada",
+          "Estrategia de juego",
+          "Preparación universitaria",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Lacrosse",
+      },
+      {
+        id: "adults",
+        name: "Programas de Adultos",
+        description:
+          "Programas especializados para atletas adultos que buscan mejorar su rendimiento",
+        highlights: [
+          "Entrenamientos personalizados",
+          "Flexibilidad de horarios",
+          "Preparación física",
+          "Programas corporativos",
+        ],
+        buttonLabel: "Ver Programa Completo",
+        imageAlt: "Instalaciones de Programas de Adultos",
+      },
+    ],
+    cta: {
+      title: "¿Listo para Comenzar tu Camino?",
+      description:
+        "Contacta a nuestro representante en Latinoamérica para obtener información personalizada sobre nuestros programas deportivos.",
+      button: "Contactar Ahora",
+    },
+  },
+  en: {
+    hero: {
+      title: "Sports Programs",
+      description: "Choose a sport to view detailed program information",
+    },
+    sports: [
+      {
+        id: "tennis",
+        name: "Tennis",
+        description:
+          "Elite tennis training program with world-class facilities",
+        highlights: [
+          "12 tennis courts",
+          "Professional coaches",
+          "Video analysis",
+          "Specialized physical training",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Tennis Facilities",
+      },
+      {
+        id: "golf",
+        name: "Golf",
+        description:
+          "18-hole golf course designed for complete player development",
+        highlights: [
+          "18-hole course",
+          "Driving range",
+          "Putting green",
+          "Short game area",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Golf Facilities",
+      },
+      {
+        id: "soccer",
+        name: "Soccer",
+        description:
+          "Modern soccer training focused on technical and tactical excellence",
+        highlights: [
+          "Natural grass fields",
+          "Tactical training",
+          "Physical conditioning",
+          "College scouting",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Soccer Facilities",
+      },
+      {
+        id: "basketball",
+        name: "Basketball",
+        description:
+          "Comprehensive basketball program with advanced skill development",
+        highlights: [
+          "Professional gyms",
+          "Individual training",
+          "Competitive scrimmages",
+          "Mental development",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Basketball Facilities",
+      },
+      {
+        id: "volleyball",
+        name: "Volleyball",
+        description:
+          "Immersive volleyball program with advanced techniques and team play",
+        highlights: [
+          "Indoor courts",
+          "Technical training",
+          "Teamwork focus",
+          "Collegiate competition",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Volleyball Facilities",
+      },
+      {
+        id: "track",
+        name: "Track & Field",
+        description:
+          "Track and field training for every discipline throughout the year",
+        highlights: [
+          "400m track",
+          "Jump zones",
+          "Throwing areas",
+          "Olympic preparation",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Track & Field Facilities",
+      },
+      {
+        id: "performance",
+        name: "Performance",
+        description:
+          "High-performance training focused on complete athletic development",
+        highlights: [
+          "Biomechanical analysis",
+          "Physical conditioning",
+          "Sports recovery",
+          "Specialized nutrition",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Performance Facilities",
+      },
+      {
+        id: "football",
+        name: "Football",
+        description:
+          "Complete American football training for future collegiate athletes",
+        highlights: [
+          "Practice field",
+          "Weight room",
+          "Tactical analysis",
+          "Scholarship preparation",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Football Facilities",
+      },
+      {
+        id: "baseball",
+        name: "Baseball",
+        description:
+          "Comprehensive baseball program focused on every position",
+        highlights: [
+          "Practice diamonds",
+          "Batting cages",
+          "Biomechanical analysis",
+          "Pitcher development",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Baseball Facilities",
+      },
+      {
+        id: "softball",
+        name: "Softball",
+        description:
+          "Complete softball development with position-specific focus",
+        highlights: [
+          "Specialized diamonds",
+          "Hitting technique",
+          "Female pitching",
+          "Game strategy",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Softball Facilities",
+      },
+      {
+        id: "lacrosse",
+        name: "Lacrosse",
+        description:
+          "Elite lacrosse program combining individual skill and team strategy",
+        highlights: [
+          "Specialized fields",
+          "Advanced technique",
+          "Game strategy",
+          "College preparation",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Lacrosse Facilities",
+      },
+      {
+        id: "adults",
+        name: "Adult Programs",
+        description:
+          "Specialized programs for adult athletes seeking to elevate performance",
+        highlights: [
+          "Personalized training",
+          "Flexible schedules",
+          "Physical conditioning",
+          "Corporate programs",
+        ],
+        buttonLabel: "View Full Program",
+        imageAlt: "IMG Academy Adult Programs Facilities",
+      },
+    ],
+    cta: {
+      title: "Ready to Start Your Journey?",
+      description:
+        "Contact our Latin America representative for personalized guidance on our sports programs.",
+      button: "Contact Now",
+    },
+  },
+};
+
+export const sportDetailTranslations: TranslationMap<SportDetailTranslation> = {
+  es: {
+    backLabel: "Volver a Deportes",
+    notFound: "Deporte no encontrado - SportId: {{sportId}}",
+    inquiry: {
+      titleTemplate: "¿Interesado en nuestro programa de {{sport}}?",
+      description:
+        "Obtén más información personalizada sobre nuestros campamentos y programas.",
+      button: "Solicitar Más Información",
+      inquiryTypeTemplate: "Información sobre {{sport}}",
+    },
+    programs: {
+      tennis: {
+        name: "Tenis",
+        description: `El programa de tenis de IMG Academy se ha construido sobre más de 40 años de resultados comprobados, con un modelo de desarrollo inigualable que marcó el estándar para academias de tenis en todo el mundo.
+
+La magnitud y profundidad de nuestro programa crean un entorno dinámico y completo, donde siempre encontrarás a otro jugador que te rete y eleve tu nivel, gracias a la diversidad de estilos de juego.
+
+Cada día, los estudiantes-atletas reciben entrenamiento diseñado para avanzar en todas las áreas: técnica, táctica, preparación física y fortaleza mental.`,
+        carouselAltPrefix: "Instalaciones de Tenis",
+      },
+      golf: {
+        name: "Golf",
+        description: `Los mejores golfistas del mundo saben que el verdadero potencial se alcanza con un desarrollo integral. Por eso, en IMG Academy ponemos el foco en los aspectos físicos, mentales, técnicos y en la estrategia de campo, lo que convierte a nuestros campamentos de golf en los mejores del país.
+
+Con una metodología de instrucción probada, los golfistas de IMG Academy se convierten en jugadores más completos, seguros y competitivos.
+
+Nuestros campamentos están dirigidos a jóvenes de 8 a 18 años, con programas personalizables para todos los niveles de habilidad y disponibilidad durante todo el año, adaptándose a tu calendario.`,
+        carouselAltPrefix: "Instalaciones de Golf",
+      },
+      soccer: {
+        name: "Fútbol",
+        description: `Los campamentos de fútbol de IMG Academy son los mejores del país en entrenamiento y desarrollo. Con la instrucción experta de entrenadores de primer nivel y una metodología comprobada que ha formado a múltiples jugadores de la MLS y a innumerables atletas de División I, nuestros campamentos están diseñados para perfeccionar cada aspecto de tu juego.
+
+Dirigidos a jóvenes de 10 a 18 años, los programas son totalmente personalizables y están disponibles durante todo el año, ajustándose a tu calendario y necesidades.`,
+        carouselAltPrefix: "Instalaciones de Fútbol",
+      },
+      basketball: {
+        name: "Baloncesto",
+        description: `No importa tu nivel de habilidad, en IMG Academy encontrarás un campamento de baloncesto diseñado para alcanzar tus metas. Nuestros programas incluyen opciones de entrenamiento personalizado y especializaciones enfocadas en áreas clave como el rendimiento mental o el liderazgo.
+
+Guiados por entrenadores de talla mundial, en un campus integral de primer nivel, los campamentos de baloncesto de IMG Academy combinan entrenamientos en grupo, trabajo de habilidades específicas por posición y escenarios de juego reales para llevar tu desempeño al siguiente nivel.`,
+        carouselAltPrefix: "Instalaciones de Baloncesto",
+      },
+      volleyball: {
+        name: "Voleibol",
+        description: `Con más de 40 años de experiencia y una base de entrenamiento reconocida a nivel mundial, los campamentos de voleibol de IMG Academy ofrecen a cada atleta la oportunidad de alcanzar sus metas.
+
+Diseñados para todos los niveles de habilidad, nuestros campamentos incluyen dos sesiones diarias en cancha y la opción de enfocarse en especializaciones clave como rendimiento mental o liderazgo.
+
+Además, incorporan entrenamiento específico por posición y escenarios competitivos que preparan a los jugadores para destacar en la cancha y más allá.`,
+        carouselAltPrefix: "Instalaciones de Voleibol",
+        videoTitle: "IMG Academy Volleyball",
+      },
+      track: {
+        name: "Atletismo",
+        description: `El programa de atletismo de IMG Academy ofrece entrenamiento específico por disciplina para saltadores, velocistas, decatletas, vallistas, lanzadores, garrochistas y corredores de medio fondo, fondo y campo traviesa, siguiendo un calendario de competencia anual.
+
+Con una metodología única y comprobada, basada en el desarrollo intencional de la capacidad de aprendizaje, la concentración y la resiliencia, cada estudiante-atleta fortalece sus habilidades y se siente preparado y seguro para rendir al máximo nivel.`,
+        carouselAltPrefix: "Instalaciones de Atletismo",
+      },
+      performance: {
+        name: "Performance",
+        description: `El entrenamiento que realizas fuera de la cancha es tan importante como la práctica y la competencia. Por eso, los campamentos de Performance de IMG Academy se enfocan en el desarrollo integral del cuerpo y la mente, con entrenamientos en áreas clave como:
+
+• Fuerza y potencia
+• Velocidad y agilidad
+• Confianza y liderazgo
+• Prevención de lesiones (pre-hab)
+• Nutrición
+• ¡y mucho más!
+
+Dirigidos a jóvenes de 12 a 18 años, estos campamentos están diseñados para todos los niveles de habilidad y te brindan la oportunidad de aprender directamente de líderes de talla mundial, que te ayudarán a convertirte en tu mejor versión cada día.
+
+Disponibles durante todo el año, para adaptarse a tu calendario.`,
+        carouselAltPrefix: "Instalaciones de Performance",
+      },
+      football: {
+        name: "Fútbol Americano",
+        description: `Hay una razón por la que el programa de fútbol americano de IMG Academy es reconocido como el mejor del país. Entrenadores de élite y una metodología de entrenamiento comprobada hacen posible que cada atleta maximice su potencial.
+
+Este mismo enfoque convierte a los campamentos de fútbol americano de IMG en líderes de la industria para todas las posiciones, con un entrenamiento centrado en el desarrollo integral del jugador.
+
+Dirigidos a jóvenes de 10 a 18 años, nuestros campamentos ofrecen programas personalizables para todos los niveles y están disponibles durante todo el año, adaptándose a tu calendario.`,
+        carouselAltPrefix: "Instalaciones de Fútbol Americano",
+      },
+      baseball: {
+        name: "Béisbol",
+        description: `El programa de béisbol de IMG Academy ofrece una metodología integral para formar al estudiante-atleta completo. Los jugadores acceden a instalaciones y equipos de última generación, entrenadores inigualables, acompañamiento constante y una comunidad apasionada y motivadora.
+
+Con múltiples equipos organizados por edad y nivel de habilidad, cada atleta comprometido encuentra la oportunidad perfecta para maximizar su potencial y llevar su juego al siguiente nivel.`,
+        carouselAltPrefix: "Instalaciones de Béisbol",
+      },
+      softball: {
+        name: "Softball",
+        description: `¡Sé parte de nuestro año inaugural y vive la experiencia del innovador programa de sóftbol de IMG Academy!
+
+Nuestro programa de sóftbol prioriza el desarrollo de cada estudiante-atleta, garantizando un crecimiento tanto integral como personalizado. Nuestros entrenadores expertos adaptan el entrenamiento a la posición, necesidades, objetivos y nivel actual de cada jugadora.
+
+La progresión a lo largo del año refleja la de un programa profesional, lo que permite a las atletas enfocarse en lo que más importa en cada temporada y llegar confiadas y preparadas antes de competir a nivel universitario.`,
+        carouselAltPrefix: "Instalaciones de Softball",
+      },
+      lacrosse: {
+        name: "Lacrosse",
+        description: `Los campamentos de lacrosse de IMG Academy representan el mejor programa de entrenamiento del país. Gracias a la combinación de entrenamiento específico por posición, conceptos de equipo aplicados en situaciones reales de juego y un enfoque integral de desarrollo, cada atleta encuentra aquí la oportunidad de llevar su rendimiento al máximo nivel.
+
+Dirigidos a jóvenes de 10 a 18 años, nuestros campamentos ofrecen programas personalizables para todos los niveles de habilidad y están disponibles durante todo el año, adaptándose a tu calendario.`,
+        carouselAltPrefix: "Instalaciones de Lacrosse",
+      },
+    },
+  },
+  en: {
+    backLabel: "Back to Sports",
+    notFound: "Sport not found - SportId: {{sportId}}",
+    inquiry: {
+      titleTemplate: "Interested in our {{sport}} program?",
+      description:
+        "Get personalized information about our camps and programs.",
+      button: "Request More Information",
+      inquiryTypeTemplate: "Information about {{sport}}",
+    },
+    programs: {
+      tennis: {
+        name: "Tennis",
+        description: `IMG Academy's tennis program has been built over more than 40 years of proven results, with a development model that set the global standard for tennis academies.
+
+The scale and depth of our program create a dynamic and complete environment where you'll always find another player who challenges and elevates your game thanks to the diversity of playing styles.
+
+Every day, student-athletes receive coaching designed to advance every area: technical, tactical, physical preparation, and mental toughness.`,
+        carouselAltPrefix: "IMG Academy Tennis Facilities",
+      },
+      golf: {
+        name: "Golf",
+        description: `The world's best golfers know that true potential is achieved through complete development. That's why IMG Academy focuses on the physical, mental, technical, and course strategy aspects that make our golf camps the best in the country.
+
+With a proven instructional methodology, IMG Academy golfers become more complete, confident, and competitive players.
+
+Our camps are designed for youth ages 8 to 18, with customizable programs for every skill level and year-round availability that adapts to your schedule.`,
+        carouselAltPrefix: "IMG Academy Golf Facilities",
+      },
+      soccer: {
+        name: "Soccer",
+        description: `IMG Academy's soccer camps are the nation's best for training and development. Featuring expert coaching from top-level instructors and a proven methodology that has produced numerous MLS players and Division I athletes, our camps are designed to refine every aspect of your game.
+
+Available for athletes ages 10 to 18, the programs are fully customizable and offered year-round to match your schedule and goals.`,
+        carouselAltPrefix: "IMG Academy Soccer Facilities",
+      },
+      basketball: {
+        name: "Basketball",
+        description: `No matter your current level, IMG Academy has a basketball camp designed to help you reach your goals. Our programs include options for personalized training and specializations focused on key areas such as mental performance or leadership.
+
+Guided by world-class coaches on a premier integrated campus, IMG Academy basketball camps combine group practices, position-specific skill work, and game scenarios to take your performance to the next level.`,
+        carouselAltPrefix: "IMG Academy Basketball Facilities",
+      },
+      volleyball: {
+        name: "Volleyball",
+        description: `With more than 40 years of experience and a training foundation recognized worldwide, IMG Academy volleyball camps give every athlete the opportunity to reach their goals.
+
+Designed for all skill levels, our camps include two on-court sessions per day and the ability to focus on key specializations such as mental performance or leadership.
+
+They also incorporate position-specific training and competitive scenarios that prepare players to excel on the court and beyond.`,
+        carouselAltPrefix: "IMG Academy Volleyball Facilities",
+        videoTitle: "IMG Academy Volleyball",
+      },
+      track: {
+        name: "Track & Field",
+        description: `IMG Academy's track & field program provides discipline-specific training for jumpers, sprinters, decathletes, hurdlers, throwers, pole vaulters, and middle-distance, distance, and cross-country runners, following an annual competition calendar.
+
+With a unique and proven methodology that develops learning capacity, focus, and resilience, every student-athlete strengthens their skills and feels prepared to perform at the highest level.`,
+        carouselAltPrefix: "IMG Academy Track & Field Facilities",
+      },
+      performance: {
+        name: "Performance",
+        description: `The work you do off the field is just as important as practice and competition. That's why IMG Academy's Performance camps focus on holistic development of the body and mind, with training in key areas such as:
+
+• Strength and power
+• Speed and agility
+• Confidence and leadership
+• Injury prevention (pre-hab)
+• Nutrition
+• And much more!
+
+Designed for athletes ages 12 to 18, these camps welcome every skill level and give you the opportunity to learn directly from world-leading experts who help you become your best version every day.
+
+Available year-round to fit your schedule.`,
+        carouselAltPrefix: "IMG Academy Performance Facilities",
+      },
+      football: {
+        name: "Football",
+        description: `There's a reason IMG Academy's football program is recognized as the nation's best. Elite coaches and a proven training methodology help every athlete maximize their potential.
+
+That same approach makes IMG's football camps industry leaders for every position, with training focused on complete player development.
+
+Designed for athletes ages 10 to 18, our camps offer customizable programs for all levels and are available year-round to fit your schedule.`,
+        carouselAltPrefix: "IMG Academy Football Facilities",
+      },
+      baseball: {
+        name: "Baseball",
+        description: `IMG Academy's baseball program offers a comprehensive methodology to develop the complete student-athlete. Players gain access to state-of-the-art facilities and equipment, unmatched coaches, consistent support, and a passionate, motivating community.
+
+With multiple teams organized by age and skill level, every committed athlete finds the perfect opportunity to maximize their potential and elevate their game.`,
+        carouselAltPrefix: "IMG Academy Baseball Facilities",
+      },
+      softball: {
+        name: "Softball",
+        description: `Join our inaugural year and experience IMG Academy's innovative softball program!
+
+Our softball program prioritizes the development of every student-athlete, ensuring both comprehensive and personalized growth. Expert coaches tailor training to each player's position, needs, goals, and current level.
+
+The yearlong progression mirrors that of a professional program, allowing athletes to focus on what matters most in each season and arrive confident and prepared before competing at the collegiate level.`,
+        carouselAltPrefix: "IMG Academy Softball Facilities",
+      },
+      lacrosse: {
+        name: "Lacrosse",
+        description: `IMG Academy's lacrosse camps represent the nation's premier training program. Combining position-specific instruction, team concepts applied in real game scenarios, and a holistic development focus, every athlete finds the opportunity to reach peak performance.
+
+Designed for players ages 10 to 18, our camps offer customizable programs for every skill level and are available year-round to fit your schedule.`,
+        carouselAltPrefix: "IMG Academy Lacrosse Facilities",
+      },
+    },
+  },
+};
+
+export const adultProgramsTranslations: TranslationMap<AdultProgramsTranslation> = {
+  es: {
+    hero: {
+      title: "Programas de Adultos",
+      subtitle: "Entrenamiento de élite diseñado para atletas adultos",
+    },
+    description: `Los programas para adultos de IMG Academy están diseñados específicamente para atletas profesionales y aficionados que buscan mejorar su rendimiento deportivo en un ambiente de clase mundial.
+
+Nuestros programas ofrecen la flexibilidad que necesitan los adultos trabajadores, con horarios adaptables y entrenamientos personalizados que se ajustan a sus objetivos específicos.
+
+Con acceso a las mismas instalaciones de élite y entrenadores expertos que utilizan nuestros atletas juveniles, los participantes adultos pueden experimentar el entrenamiento de más alto nivel disponible.
+
+**Características principales:**
+
+• **Entrenamientos Personalizados**: Programas diseñados específicamente para las necesidades y objetivos de cada adulto
+
+• **Flexibilidad de Horarios**: Opciones de entrenamiento que se adaptan a las responsabilidades profesionales y personales
+
+• **Preparación Física Integral**: Enfoque holístico que incluye fuerza, acondicionamiento, nutrición y recuperación
+
+• **Programas Corporativos**: Opciones especiales para empresas que buscan programas de bienestar para sus empleados
+
+• **Instalaciones de Clase Mundial**: Acceso completo a todas las instalaciones deportivas de IMG Academy
+
+• **Entrenadores Expertos**: Staff profesional con experiencia en entrenamiento de atletas de élite
+
+**Deportes Disponibles:**
+- Tenis
+- Golf
+- Fitness y Acondicionamiento
+- Entrenamiento Funcional
+- Programas de Rehabilitación
+- Preparación Física General
+
+Los programas están disponibles durante todo el año, con opciones de intensidad y duración variables para adaptarse a diferentes niveles de experiencia y disponibilidad de tiempo.`,
+    carouselName: "Adultos",
+    carouselAltPrefix: "Instalaciones de Programas de Adultos",
+    inquiry: {
+      title: "¿Interesado en Nuestros Programas para Adultos?",
+      description:
+        "Obtén más información personalizada sobre nuestros programas para adultos y cómo pueden ayudarte a alcanzar tus objetivos deportivos.",
+      button: "Solicitar Más Información",
+      inquiryType: "Programas de Adultos",
+    },
+  },
+  en: {
+    hero: {
+      title: "Adult Programs",
+      subtitle: "Elite training designed for adult athletes",
+    },
+    description: `IMG Academy's adult programs are designed specifically for professional and recreational athletes who want to enhance their performance in a world-class environment.
+
+Our programs offer the flexibility that working adults need, with adaptable schedules and personalized training tailored to their specific goals.
+
+With access to the same elite facilities and expert coaches as our youth athletes, adult participants experience the highest level of training available.
+
+**Key Features:**
+
+• **Personalized Training**: Programs designed specifically for each adult's needs and goals
+
+• **Flexible Schedules**: Training options that adapt to professional and personal commitments
+
+• **Comprehensive Physical Preparation**: A holistic focus that includes strength, conditioning, nutrition, and recovery
+
+• **Corporate Programs**: Special options for companies seeking wellness solutions for their teams
+
+• **World-Class Facilities**: Full access to every IMG Academy sports venue
+
+• **Expert Coaches**: Professional staff with experience training elite athletes
+
+**Available Sports:**
+- Tennis
+- Golf
+- Fitness & Conditioning
+- Functional Training
+- Rehabilitation Programs
+- General Physical Preparation
+
+Programs are offered year-round with multiple intensity and duration options to match different experience levels and availability.`,
+    carouselName: "Adult Programs",
+    carouselAltPrefix: "Adult Programs Facilities",
+    inquiry: {
+      title: "Interested in Our Adult Programs?",
+      description:
+        "Get personalized details about our adult programs and how they can help you reach your athletic goals.",
+      button: "Request More Information",
+      inquiryType: "Adult Programs",
+    },
+  },
+};
+
+export const boardingPageTranslations: TranslationMap<BoardingPageTranslation> = {
+  es: {
+    carouselAltPrefix: "IMG Academy Internado",
+    hero: {
+      lines: ["IMG ACADEMY", "Donde el talento se convierte en éxito"],
+    },
+    paragraphs: [
+      "IMG Academy es mucho más que un colegio preparatorio con opciones de internado y externado: es una institución dedicada a impulsar a los estudiantes-atletas hacia el éxito en la universidad, en su carrera y en la vida.",
+      "Nuestro programa integral combina lo académico, lo deportivo y el desarrollo personal, ofreciendo una formación de excelencia que motiva y desafía a cada alumno en el aula, en el campo y fuera de él.",
+      "Con un firme compromiso con la diversidad, reunimos a más de 1.500 estudiantes de 74 países, creando un entorno multicultural que enriquece el aprendizaje y fomenta la colaboración global. Los alumnos tienen acceso a una amplia gama de oportunidades: programas Honors, cursos Advanced Placement, doble titulación y 17 deportes de alto nivel.",
+      "Nuestra metodología, basada en las mejores prácticas educativas y respaldada por investigaciones actuales, integra habilidades esenciales para el siglo XXI, alfabetización informacional y tareas de pensamiento complejo y riguroso, preparando a nuestros estudiantes para destacar en entornos universitarios y profesionales exigentes.",
+    ],
+    stat: {
+      prefix: "El resultado:",
+      value: "97%",
+      suffix:
+        " de nuestros alumnos participa activamente en deportes, reforzando nuestra visión de una educación integral que forma líderes, deportistas y personas con valores para toda la vida.",
+    },
+    inquiry: {
+      title: "¿Interesado en Nuestro Programa de Internado?",
+      description:
+        "Obtén más información personalizada sobre nuestro programa de internado y cómo puede transformar el futuro de tu hijo.",
+      button: "Solicitar Más Información",
+      inquiryType: "Programa de Internado",
+    },
+  },
+  en: {
+    carouselAltPrefix: "IMG Academy Boarding",
+    hero: {
+      lines: ["IMG ACADEMY", "Where talent becomes success"],
+    },
+    paragraphs: [
+      "IMG Academy is much more than a preparatory school with boarding and day options: it is an institution dedicated to propelling student-athletes toward success in college, their careers, and their lives.",
+      "Our comprehensive program combines academics, athletics, and personal development, delivering an exceptional education that motivates and challenges every student in the classroom, on the field, and beyond.",
+      "With a strong commitment to diversity, we bring together more than 1,500 students from 74 countries, creating a multicultural environment that enriches learning and encourages global collaboration. Students gain access to opportunities including Honors programs, Advanced Placement courses, dual diplomas, and 17 high-level sports.",
+      "Our methodology, grounded in best educational practices and supported by current research, integrates essential 21st-century skills, information literacy, and complex, rigorous thinking tasks, preparing our students to excel in demanding university and professional settings.",
+    ],
+    stat: {
+      prefix: "The result:",
+      value: "97%",
+      suffix:
+        " of our students actively participate in sports, reinforcing our vision of a holistic education that develops leaders, athletes, and people of character for life.",
+    },
+    inquiry: {
+      title: "Interested in Our Boarding Program?",
+      description:
+        "Receive personalized information about our boarding program and how it can transform your child's future.",
+      button: "Request More Information",
+      inquiryType: "Boarding Program",
+    },
+  },
+};
+
+export const facilitiesPageTranslations: TranslationMap<FacilitiesPageTranslation> = {
+  es: {
+    videoTitle: "IMG Academy Campus Tour",
+    hero: {
+      heading: "EL EPICENTRO DE LA EXCELENCIA DEPORTIVA",
+    },
+    campusSection: {
+      subtitle: "Un Campus Sin Límites",
+      paragraphs: [
+        "Extendido a través de más de 600 acres en el corazón de Florida, IMG Academy representa la culminación de décadas de innovación en instalaciones deportivas. Cada centímetro de nuestro campus ha sido meticulosamente diseñado para desafiar los límites de lo posible.",
+        "Desde campos que han sido testigos de récords mundiales hasta laboratorios que definen el futuro del rendimiento atlético, nuestras instalaciones no solo entrenan atletas: forjan leyendas.",
+      ],
+      cards: [
+        {
+          title: "Campos de Competición",
+          description:
+            "Superficies que cumplen con estándares de la FIFA, UEFA y organismos internacionales. Cada campo es una réplica exacta de los escenarios donde se definen los campeonatos mundiales.",
+        },
+        {
+          title: "Ciencia del Rendimiento",
+          description:
+            "Laboratorios equipados con tecnología utilizada por equipos olímpicos. Análisis biomecánico, pruebas de VO2 máximo y sistemas de recuperación de vanguardia.",
+        },
+        {
+          title: "Centros de Fuerza",
+          description:
+            "Gimnasios que rivalizan con los utilizados por atletas profesionales de la NFL, NBA y ligas europeas. Equipamiento exclusivo y programas personalizados.",
+        },
+      ],
+      highlight: {
+        title: "La Diferencia IMG",
+        description:
+          '"No es solo donde entrenas, es donde te transformas. Cada instalación, cada detalle, cada innovación está diseñada con un único propósito: <span class="font-bold">llevarte más allá de tus límites</span> y convertirte en el atleta que siempre soñaste ser."',
+      },
+    },
+    carouselAltPrefix: "Instalaciones IMG Academy",
+  },
+  en: {
+    videoTitle: "IMG Academy Campus Tour",
+    hero: {
+      heading: "THE EPICENTER OF SPORTS EXCELLENCE",
+    },
+    campusSection: {
+      subtitle: "A Campus Without Limits",
+      paragraphs: [
+        "Stretching across more than 600 acres in the heart of Florida, IMG Academy represents the culmination of decades of innovation in sports facilities. Every inch of our campus has been meticulously designed to push the boundaries of what is possible.",
+        "From fields that have witnessed world records to laboratories defining the future of athletic performance, our facilities don't just train athletes—they forge legends.",
+      ],
+      cards: [
+        {
+          title: "Competition Fields",
+          description:
+            "Surfaces that meet FIFA, UEFA, and international standards. Every field mirrors the venues where world championships are decided.",
+        },
+        {
+          title: "Performance Science",
+          description:
+            "Laboratories equipped with technology used by Olympic teams. Biomechanical analysis, VO2 max testing, and state-of-the-art recovery systems.",
+        },
+        {
+          title: "Strength Centers",
+          description:
+            "Gyms that rival those used by professional athletes in the NFL, NBA, and European leagues, featuring exclusive equipment and personalized programs.",
+        },
+      ],
+      highlight: {
+        title: "The IMG Difference",
+        description:
+          '"It\'s not just where you train, it\'s where you transform. Every facility, every detail, every innovation is designed with one purpose: <span class="font-bold">taking you beyond your limits</span> and shaping the athlete you\'ve always dreamed of becoming."',
+      },
+    },
+    carouselAltPrefix: "IMG Academy Facilities",
+  },
+};
+
 export const enhancedContactFormTranslations: TranslationMap<EnhancedContactFormTranslation> = {
   es: {
     badge: "CONTACTO PERSONALIZADO",
@@ -2664,3 +3565,18 @@ export const getSportSelectionQuizTranslation = (language: SupportedLanguage) =>
 
 export const getCampComparisonTranslation = (language: SupportedLanguage) =>
   campComparisonTranslations[language];
+
+export const getSportsPageTranslation = (language: SupportedLanguage) =>
+  sportsPageTranslations[language];
+
+export const getSportDetailTranslation = (language: SupportedLanguage) =>
+  sportDetailTranslations[language];
+
+export const getAdultProgramsTranslation = (language: SupportedLanguage) =>
+  adultProgramsTranslations[language];
+
+export const getBoardingPageTranslation = (language: SupportedLanguage) =>
+  boardingPageTranslations[language];
+
+export const getFacilitiesPageTranslation = (language: SupportedLanguage) =>
+  facilitiesPageTranslations[language];
