@@ -1,4 +1,9 @@
+import { useLanguage } from "@/hooks/use-language";
+import { getPersonalDevelopmentTranslation } from "@/lib/translations";
+
 const PersonalDevelopmentSection = () => {
+  const { language } = useLanguage();
+  const personalDevelopmentCopy = getPersonalDevelopmentTranslation(language);
   return (
     <section className="bg-white px-6 py-16">
       {/* Leadership Image Placeholder */}
@@ -10,16 +15,43 @@ const PersonalDevelopmentSection = () => {
       </div>
 
       <h2 className="text-4xl font-bold text-primary mb-8">
-        DESARROLLO<br />
-        PERSONAL
+        {personalDevelopmentCopy.titleLines.map((line, index) => (
+          <span key={`${line}-${index}`}>
+            {line}
+            {index !== personalDevelopmentCopy.titleLines.length - 1 && <br />}
+          </span>
+        ))}
       </h2>
-      
+
       <p className="text-gray-700 text-lg leading-relaxed mb-8">
-        Las llamadas habilidades "intangibles" como liderazgo, comunicación, manejo de la adversidad, confianza y enfoque son críticas para el éxito en todos los aspectos de la vida. Pero, ¿con qué frecuencia los estudiantes-atletas son <span className="underline">enseñados</span> intencionalmente cómo mejorar estas habilidades? En IMG Academy, tenemos más de 100 entrenadores con educación y experiencia en todas las facetas del desarrollo personal, con clases específicas y programas de entrenamiento implementados como parte de la experiencia de desarrollo general.
+        {personalDevelopmentCopy.descriptionSegments.map((segment, index) => (
+          <span key={`paragraph-${index}`}>
+            {segment.map((token, tokenIndex) => {
+              if (typeof token === "string") {
+                return <span key={`token-${index}-${tokenIndex}`}>{token}</span>;
+              }
+
+              return (
+                <span
+                  key={`token-${index}-${tokenIndex}`}
+                  className="underline"
+                >
+                  {token.text}
+                </span>
+              );
+            })}
+            {index !== personalDevelopmentCopy.descriptionSegments.length - 1 && (
+              <>
+                <br />
+                <br />
+              </>
+            )}
+          </span>
+        ))}
       </p>
 
       <button className="bg-primary text-white px-8 py-4 rounded-full font-semibold">
-        Saber Más
+        {personalDevelopmentCopy.cta}
       </button>
     </section>
   );
