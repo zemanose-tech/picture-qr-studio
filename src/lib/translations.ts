@@ -53,6 +53,107 @@ type PersonalDevelopmentTranslation = {
   cta: string;
 };
 
+type DiscountOfferTranslation = {
+  title: string;
+  discount: string;
+  description: string;
+  validUntil: string;
+  conditions: string[];
+  highlight?: string;
+  bgColor: string;
+};
+
+type DiscountsTranslation = {
+  badge: string;
+  heading: {
+    prefix?: string;
+    highlight: string;
+    suffix: string;
+  };
+  description: string;
+  offers: DiscountOfferTranslation[];
+  labels: {
+    validUntil: string;
+    conditions: string;
+  };
+  buttons: {
+    apply: string;
+  };
+  benefits: {
+    title: string;
+    description: string;
+    items: string[];
+    ctaButton: string;
+  };
+  finalCta: {
+    title: string;
+    description: string;
+    button: string;
+  };
+};
+
+type BookingInfoTranslation = {
+  title: string;
+  items: string[];
+};
+
+type FacilityTranslation = {
+  title: string;
+  description: string;
+  features: string[];
+};
+
+type FacilitiesTranslation = {
+  badge: string;
+  heading: {
+    pre: string;
+    highlight: string;
+    post: string;
+  };
+  description: string;
+  heroButton: string;
+  facilities: FacilityTranslation[];
+  facilityBadge: string;
+  stats: {
+    title: string;
+    description: string;
+    items: Array<{ value: string; label: string }>;
+  };
+  location: {
+    title: string;
+    description: string;
+    bullets: string[];
+  };
+  explore: {
+    title: string;
+    description: string;
+    actions: Array<{
+      icon: "play" | "camera" | "map";
+      label: string;
+    }>;
+  };
+};
+
+type CampDetailsTranslation = {
+  camps: Array<{
+    title: string;
+    subtitle: string;
+    icon: string;
+    iconSecond?: string;
+    iconThird?: string;
+    features: string[];
+    description: string;
+    campInfo?: string;
+    bgColor: string;
+  }>;
+  buttonLabel: string;
+  inquiryType: string;
+};
+
+type CampsPageTranslation = {
+  heroTitle: [string, string];
+};
+
 type AcademicsTranslation = {
   placeholderTitle: string;
   placeholderSubtitle: string;
@@ -978,6 +1079,550 @@ export const contactHelpTranslations: TranslationMap<ContactHelpTranslation> = {
   },
 };
 
+export const discountsTranslations: TranslationMap<DiscountsTranslation> = {
+  es: {
+    badge: "Ofertas Exclusivas",
+    heading: {
+      prefix: "",
+      highlight: "Descuentos especiales",
+      suffix: "para Latinoamérica",
+    },
+    description:
+      "Como parte del programa de referencias global de IMG Academy, ofrecemos descuentos exclusivos y beneficios adicionales para estudiantes de nuestra región.",
+    offers: [
+      {
+        title: "Descuento Latinoamérica",
+        discount: "15%",
+        description:
+          "Descuento exclusivo para estudiantes de Colombia, España, Panamá y Costa Rica",
+        validUntil: "31 de Marzo, 2025",
+        conditions: [
+          "Aplicable a todos los programas",
+          "Válido para nuevos estudiantes",
+          "No acumulable con otras ofertas",
+        ],
+        highlight: "Más popular",
+        bgColor: "bg-gradient-hero",
+      },
+      {
+        title: "Hermanos/Familia",
+        discount: "20%",
+        description:
+          "Descuento adicional cuando dos o más hermanos se inscriben en el mismo año",
+        validUntil: "Todo el año",
+        conditions: [
+          "Mínimo 2 hermanos",
+          "Inscripción simultánea",
+          "Aplicable al segundo hermano en adelante",
+        ],
+        highlight: "Ahorro familiar",
+        bgColor: "bg-gradient-accent",
+      },
+      {
+        title: "Inscripción Temprana",
+        discount: "10%",
+        description:
+          "Reserva tu lugar con anticipación y obtén un descuento adicional",
+        validUntil: "15 de Febrero, 2025",
+        conditions: [
+          "Reserva antes del 15 de febrero",
+          "Pago del 50% al momento de reserva",
+          "Para programas de verano 2025",
+        ],
+        highlight: "Tiempo limitado",
+        bgColor: "bg-primary",
+      },
+    ],
+    labels: {
+      validUntil: "Válido hasta:",
+      conditions: "Condiciones:",
+    },
+    buttons: {
+      apply: "Aplicar descuento",
+    },
+    benefits: {
+      title: "Beneficios adicionales incluidos",
+      description:
+        "Además de los descuentos, como parte de nuestro programa regional recibes estos beneficios sin costo adicional:",
+      items: [
+        "Proceso de admisión sin costo adicional",
+        "Asesoría personalizada en español",
+        "Soporte durante todo el proceso",
+        "Conexión directa con familias latinoamericanas",
+        "Asistencia con visas y documentación",
+        "Seguimiento académico y deportivo continuo",
+      ],
+      ctaButton: "Solicitar información completa",
+    },
+    finalCta: {
+      title: "¿Listo para comenzar tu aventura en IMG Academy?",
+      description:
+        "Contáctanos hoy mismo para una consulta personalizada gratuita y descubre cómo podemos ayudarte a alcanzar tus objetivos deportivos y académicos con los mejores descuentos disponibles.",
+      button: "Contactar ahora",
+    },
+  },
+  en: {
+    badge: "Exclusive Offers",
+    heading: {
+      prefix: "",
+      highlight: "Special discounts",
+      suffix: "for Latin America",
+    },
+    description:
+      "As part of IMG Academy's global referral programme, we provide exclusive discounts and additional benefits for students from our region.",
+    offers: [
+      {
+        title: "Latin America Discount",
+        discount: "15%",
+        description:
+          "Exclusive discount for students from Colombia, Spain, Panama, and Costa Rica",
+        validUntil: "March 31, 2025",
+        conditions: [
+          "Applicable to all programmes",
+          "Valid for new students",
+          "Cannot be combined with other offers",
+        ],
+        highlight: "Most popular",
+        bgColor: "bg-gradient-hero",
+      },
+      {
+        title: "Siblings/Family",
+        discount: "20%",
+        description:
+          "Additional discount when two or more siblings enrol in the same year",
+        validUntil: "All year",
+        conditions: [
+          "Minimum of two siblings",
+          "Simultaneous enrolment",
+          "Applies to the second sibling onward",
+        ],
+        highlight: "Family savings",
+        bgColor: "bg-gradient-accent",
+      },
+      {
+        title: "Early Registration",
+        discount: "10%",
+        description: "Reserve your spot early and receive an additional discount",
+        validUntil: "February 15, 2025",
+        conditions: [
+          "Book before 15 February",
+          "50% payment required at reservation",
+          "For summer 2025 programmes",
+        ],
+        highlight: "Limited time",
+        bgColor: "bg-primary",
+      },
+    ],
+    labels: {
+      validUntil: "Valid until:",
+      conditions: "Conditions:",
+    },
+    buttons: {
+      apply: "Apply discount",
+    },
+    benefits: {
+      title: "Additional benefits included",
+      description:
+        "Beyond the discounts, our regional programme includes these complimentary benefits:",
+      items: [
+        "Admissions process without extra fees",
+        "Personalised support in Spanish",
+        "Guidance throughout the entire process",
+        "Direct connection with Latin American families",
+        "Visa and documentation assistance",
+        "Ongoing academic and athletic follow-up",
+      ],
+      ctaButton: "Request complete information",
+    },
+    finalCta: {
+      title: "Ready to begin your IMG Academy adventure?",
+      description:
+        "Contact us today for a free personalised consultation and discover how we can help you reach your athletic and academic goals with the best available discounts.",
+      button: "Contact now",
+    },
+  },
+};
+
+export const bookingInfoTranslations: TranslationMap<BookingInfoTranslation> = {
+  es: {
+    title: "LO QUE LAS FAMILIAS DEBEN SABER ANTES DE RESERVAR",
+    items: [
+      "El registro del campo cierra 10 días antes del inicio de cada campo.",
+      "El check-in del campo es el domingo, y el check-out es el sábado (excepto para algunos campos de vacaciones y torneos).",
+      "Los campos están disponibles durante todo el año, siendo enero-marzo, junio-agosto y diciembre los meses más populares entre los atletas. Es importante reservar con al menos 6 meses de anticipación para asegurar tu lugar y garantizar disponibilidad.",
+      "Los campistas pueden extender su estadía en el campo mientras estén en el campus, pendiente de disponibilidad de internado y entrenamiento deportivo.",
+      "Los precios pueden aumentar mientras más cerca esté la fecha de reserva, así que reserva temprano para ahorrar.",
+      "Los campistas de múltiples semanas típicamente reservan una de nuestras excursiones supervisadas fuera del campus para relajarse y disfrutar tiempo con otros campistas en algunas de nuestras atracciones locales.",
+      "Opciones de campo reembolsables están disponibles. Si compras un paquete reembolsable, IMGA reembolsará la cantidad que pagaste para comprar el paquete, menos una tarifa de servicio igual al 2.5% del monto total pagado por dicho paquete, siempre que canceles el paquete al menos 48 horas antes de tu fecha programada original de llegada.",
+    ],
+  },
+  en: {
+    title: "WHAT FAMILIES SHOULD KNOW BEFORE BOOKING",
+    items: [
+      "Camp registration closes 10 days before each start date.",
+      "Camp check-in is on Sunday and check-out is on Saturday (except for select holiday camps and tournaments).",
+      "Camps run year-round, with January-March, June-August, and December being the most popular months. Reserve at least 6 months in advance to secure your spot and ensure availability.",
+      "Campers can extend their stay while on campus, subject to boarding and training availability.",
+      "Prices may increase as the start date approaches, so book early to save.",
+      "Multi-week campers often join our supervised off-campus excursions to relax and enjoy time with other campers at local attractions.",
+      "Refundable camp options are available. If you purchase a refundable package, IMG will refund the amount you paid minus a service fee equal to 2.5% of the total amount paid, provided you cancel at least 48 hours before your original arrival date.",
+    ],
+  },
+};
+
+export const facilitiesTranslations: TranslationMap<FacilitiesTranslation> = {
+  es: {
+    badge: "Instalaciones de Clase Mundial",
+    heading: {
+      pre: "Entrena en las",
+      highlight: "mejores instalaciones",
+      post: "del mundo",
+    },
+    description:
+      "IMG Academy cuenta con más de 600 acres de instalaciones deportivas y académicas de última generación en Bradenton, Florida, diseñadas para maximizar el potencial de cada estudiante-atleta.",
+    heroButton: "Tour virtual de las instalaciones",
+    facilities: [
+      {
+        title: "Centro de Tenis",
+        description: "55 canchas de tenis de superficie múltiple",
+        features: [
+          "Canchas Hard Court",
+          "Canchas de Arcilla",
+          "Iluminación LED",
+          "Sistema de video análisis",
+        ],
+      },
+      {
+        title: "Campos de Golf",
+        description: "18 hoyos de campeonato diseñados por profesionales",
+        features: [
+          "Campo regulación PGA",
+          "Driving range cubierto",
+          "Putting greens",
+          "Simuladores indoor",
+        ],
+      },
+      {
+        title: "Instalaciones de Fútbol",
+        description: "Múltiples campos de entrenamiento de clase mundial",
+        features: [
+          "Césped natural y artificial",
+          "Sistema de riego automatizado",
+          "Iluminación profesional",
+          "Áreas de recuperación",
+        ],
+      },
+      {
+        title: "Centro Académico",
+        description: "Aulas equipadas con tecnología de punta",
+        features: [
+          "Aulas inteligentes",
+          "Laboratorios de ciencias",
+          "Biblioteca digital",
+          "Espacios de estudio",
+        ],
+      },
+      {
+        title: "Centro de Rendimiento",
+        description: "Instalaciones de acondicionamiento físico de élite",
+        features: [
+          "Gimnasio de última generación",
+          "Piscina olímpica",
+          "Centro de rehabilitación",
+          "Análisis biomecánico",
+        ],
+      },
+      {
+        title: "Residencias",
+        description: "Alojamiento cómodo y seguro para estudiantes internacionales",
+        features: [
+          "Habitaciones modernas",
+          "Áreas comunes",
+          "Seguridad 24/7",
+          "Servicio de comidas",
+        ],
+      },
+    ],
+    facilityBadge: "Élite",
+    stats: {
+      title: "Instalaciones en números",
+      description:
+        "Cada detalle de nuestras instalaciones ha sido diseñado pensando en la excelencia deportiva y académica.",
+      items: [
+        { value: "600+", label: "Acres de instalaciones" },
+        { value: "55", label: "Canchas de tenis" },
+        { value: "18", label: "Hoyos de golf" },
+        { value: "24/7", label: "Acceso a instalaciones" },
+      ],
+    },
+    location: {
+      title: "Ubicación privilegiada",
+      description:
+        "Ubicada en Bradenton, Florida, IMG Academy se encuentra a solo 45 minutos del Aeropuerto Internacional de Tampa y a 1 hora de Orlando, ofreciendo fácil acceso desde cualquier parte del mundo.",
+      bullets: [
+        "Clima subtropical ideal para entrenar todo el año",
+        "Cerca de aeropuertos internacionales",
+        "Comunidad segura y amigable",
+      ],
+    },
+    explore: {
+      title: "Explora virtualmente",
+      description:
+        "Realiza un recorrido virtual por nuestras instalaciones desde la comodidad de tu hogar. Conoce cada detalle de lo que será tu nuevo hogar deportivo y académico.",
+      actions: [
+        { icon: "play", label: "Tour virtual 360°" },
+        { icon: "camera", label: "Galería de fotos" },
+        { icon: "map", label: "Mapa interactivo" },
+      ],
+    },
+  },
+  en: {
+    badge: "World-Class Facilities",
+    heading: {
+      pre: "Train in the",
+      highlight: "best facilities",
+      post: "in the world",
+    },
+    description:
+      "IMG Academy spans more than 600 acres of state-of-the-art athletic and academic facilities in Bradenton, Florida, all designed to maximise each student-athlete's potential.",
+    heroButton: "Virtual facilities tour",
+    facilities: [
+      {
+        title: "Tennis Center",
+        description: "55 multi-surface tennis courts",
+        features: [
+          "Hard courts",
+          "Clay courts",
+          "LED lighting",
+          "Video analysis system",
+        ],
+      },
+      {
+        title: "Golf Complex",
+        description: "18-hole championship course designed by professionals",
+        features: [
+          "PGA-regulation course",
+          "Covered driving range",
+          "Putting greens",
+          "Indoor simulators",
+        ],
+      },
+      {
+        title: "Soccer Facilities",
+        description: "Multiple world-class training fields",
+        features: [
+          "Natural and artificial turf",
+          "Automated irrigation system",
+          "Professional lighting",
+          "Recovery areas",
+        ],
+      },
+      {
+        title: "Academic Center",
+        description: "Classrooms equipped with cutting-edge technology",
+        features: [
+          "Smart classrooms",
+          "Science laboratories",
+          "Digital library",
+          "Study spaces",
+        ],
+      },
+      {
+        title: "Performance Center",
+        description: "Elite strength and conditioning facilities",
+        features: [
+          "State-of-the-art gym",
+          "Olympic-size pool",
+          "Rehabilitation centre",
+          "Biomechanical analysis",
+        ],
+      },
+      {
+        title: "Residences",
+        description: "Comfortable and secure housing for international students",
+        features: [
+          "Modern rooms",
+          "Common areas",
+          "24/7 security",
+          "Meal service",
+        ],
+      },
+    ],
+    facilityBadge: "Elite",
+    stats: {
+      title: "Facilities by the numbers",
+      description:
+        "Every detail of our campus is designed with athletic and academic excellence in mind.",
+      items: [
+        { value: "600+", label: "Acres of facilities" },
+        { value: "55", label: "Tennis courts" },
+        { value: "18", label: "Golf holes" },
+        { value: "24/7", label: "Facility access" },
+      ],
+    },
+    location: {
+      title: "Prime location",
+      description:
+        "Located in Bradenton, Florida, IMG Academy is only 45 minutes from Tampa International Airport and 1 hour from Orlando, providing easy access from anywhere in the world.",
+      bullets: [
+        "Subtropical climate ideal for year-round training",
+        "Close to international airports",
+        "Safe and welcoming community",
+      ],
+    },
+    explore: {
+      title: "Explore virtually",
+      description:
+        "Take a virtual tour of our campus from the comfort of your home. Discover every detail of what will become your new athletic and academic home.",
+      actions: [
+        { icon: "play", label: "360° virtual tour" },
+        { icon: "camera", label: "Photo gallery" },
+        { icon: "map", label: "Interactive map" },
+      ],
+    },
+  },
+};
+
+export const campDetailsTranslations: TranslationMap<CampDetailsTranslation> = {
+  es: {
+    camps: [
+      {
+        title: "IMG ACADEMY CAMP",
+        subtitle: "Edades 13-18",
+        icon: "🏃",
+        features: [
+          "CAMPOS DEPORTIVOS SEMANALES",
+          "En nuestro campus ubicado en Bradenton, Florida",
+        ],
+        description:
+          "La reconocida metodología de entrenamiento de IMG Academy combina instrucción deportiva de élite con trabajo en grupo de fuerza, velocidad y rendimiento mental.",
+        campInfo:
+          "Nuestro programa base que incluye entrenamientos deportivos especializados, sesiones de fuerza y acondicionamiento, desarrollo mental, y acceso completo a nuestras instalaciones de clase mundial. Incluye dos sesiones diarias de entrenamiento específico por deporte, desarrollo de habilidades técnicas y tácticas, y participación en juegos y competencias.",
+        bgColor: "bg-gray-100",
+      },
+      {
+        title: "TOTAL ATHLETE CAMP",
+        subtitle: "Edades 13-18",
+        icon: "🏃",
+        iconSecond: "💪",
+        features: [
+          "ENTRENAMIENTO DE RENDIMIENTO",
+          "Campo con un enfoque semanal de entrenamiento preseleccionado adicional",
+        ],
+        description:
+          "Diseñado para atletas que buscan potenciar su fuerza, velocidad, resistencia mental u otras áreas clave de rendimiento. Cada semana eliges una especialización, con entrenamientos diarios.",
+        bgColor: "bg-blue-400",
+      },
+      {
+        title: "BREAKTHROUGH CAMP",
+        subtitle: "Edades 13-18",
+        icon: "🏃",
+        iconSecond: "📋",
+        features: [
+          "ENTRENAMIENTO PERSONALIZADO",
+          "Campo con una sesión diaria adicional de entrenamiento en un entorno más pequeño",
+        ],
+        description:
+          "Pensado para atletas que desean un entrenamiento más personalizado y enfocado en perfeccionar aspectos específicos de su juego.",
+        campInfo:
+          "Experiencia premium con entrenamientos personalizados 1:1, análisis biomecánico detallado, plan de nutrición individualizado y seguimiento especializado. Los atletas reciben atención individualizada de nuestros entrenadores expertos para desarrollar técnicas específicas y corregir aspectos técnicos de su rendimiento deportivo.",
+        bgColor: "bg-blue-600",
+      },
+      {
+        title: "GAME CHANGER CAMP",
+        subtitle: "Edades 13-18",
+        icon: "🏃",
+        iconSecond: "💪",
+        iconThird: "📋",
+        features: [
+          "PAQUETE DE ENTRENAMIENTO DEFINITIVO",
+          "Campo con entrenamiento de rendimiento adicional y sesiones de entrenamiento personalizado",
+        ],
+        description:
+          "Creado para atletas que buscan la experiencia de entrenamiento definitiva para transformar todos los aspectos de su desarrollo y rendimiento.",
+        campInfo:
+          "Nuestra experiencia más exclusiva que combina entrenamientos con atletas profesionales, acceso VIP a instalaciones, sesiones de liderazgo ejecutivo y networking con scouts universitarios. Incluye todos los beneficios de los programas anteriores más oportunidades únicas de desarrollo profesional y conexiones en el mundo deportivo de élite.",
+        bgColor: "bg-lime-400",
+      },
+    ],
+    buttonLabel: "Contactar Ahora",
+    inquiryType: "Reserva de Campo",
+  },
+  en: {
+    camps: [
+      {
+        title: "IMG ACADEMY CAMP",
+        subtitle: "Ages 13-18",
+        icon: "🏃",
+        features: [
+          "WEEKLY SPORTS CAMPS",
+          "On our campus in Bradenton, Florida",
+        ],
+        description:
+          "IMG Academy's renowned training methodology blends elite sport instruction with group work focused on strength, speed, and mental performance.",
+        campInfo:
+          "Our core programme includes specialised sport training, strength and conditioning sessions, mental performance development, and full access to our world-class facilities. Athletes receive two sport-specific training sessions per day, technical and tactical skill development, and participate in games and competitions.",
+        bgColor: "bg-gray-100",
+      },
+      {
+        title: "TOTAL ATHLETE CAMP",
+        subtitle: "Ages 13-18",
+        icon: "🏃",
+        iconSecond: "💪",
+        features: [
+          "PERFORMANCE TRAINING",
+          "Camp with an additional preselected performance focus each week",
+        ],
+        description:
+          "Designed for athletes who want to boost strength, speed, mental toughness, or other key performance areas. Each week you choose a specialisation with daily training.",
+        bgColor: "bg-blue-400",
+      },
+      {
+        title: "BREAKTHROUGH CAMP",
+        subtitle: "Ages 13-18",
+        icon: "🏃",
+        iconSecond: "📋",
+        features: [
+          "PERSONALISED COACHING",
+          "Camp with an additional daily training session in a smaller setting",
+        ],
+        description:
+          "Ideal for athletes seeking more individualised training focused on refining specific aspects of their game.",
+        campInfo:
+          "A premium experience featuring 1:1 personalised sessions, detailed biomechanical analysis, tailored nutrition plans, and specialised follow-up. Athletes receive individual attention from expert coaches to build specific techniques and refine technical aspects of their performance.",
+        bgColor: "bg-blue-600",
+      },
+      {
+        title: "GAME CHANGER CAMP",
+        subtitle: "Ages 13-18",
+        icon: "🏃",
+        iconSecond: "💪",
+        iconThird: "📋",
+        features: [
+          "ULTIMATE TRAINING PACKAGE",
+          "Camp with additional performance training and personalised coaching sessions",
+        ],
+        description:
+          "Created for athletes who want the ultimate training experience to transform every aspect of their development and performance.",
+        campInfo:
+          "Our most exclusive experience combines training with professional athletes, VIP facility access, leadership sessions, and networking with university scouts. Includes all benefits of the previous programmes plus unique professional development opportunities and elite sports connections.",
+        bgColor: "bg-lime-400",
+      },
+    ],
+    buttonLabel: "Contact Now",
+    inquiryType: "Camp Reservation",
+  },
+};
+
+export const campsPageTranslations: TranslationMap<CampsPageTranslation> = {
+  es: {
+    heroTitle: ["Campamentos", "IMG Academy"],
+  },
+  en: {
+    heroTitle: ["IMG Academy", "Camps"],
+  },
+};
+
 export const installationsTranslations: TranslationMap<InstallationsTranslation> = {
   es: {
     title: "INSTALACIONES DE CLASE MUNDIAL",
@@ -1129,3 +1774,18 @@ export const getPersonalDevelopmentTranslation = (language: SupportedLanguage) =
 
 export const getFooterTranslation = (language: SupportedLanguage) =>
   footerTranslations[language];
+
+export const getDiscountsTranslation = (language: SupportedLanguage) =>
+  discountsTranslations[language];
+
+export const getBookingInfoTranslation = (language: SupportedLanguage) =>
+  bookingInfoTranslations[language];
+
+export const getFacilitiesTranslation = (language: SupportedLanguage) =>
+  facilitiesTranslations[language];
+
+export const getCampDetailsTranslation = (language: SupportedLanguage) =>
+  campDetailsTranslations[language];
+
+export const getCampsPageTranslation = (language: SupportedLanguage) =>
+  campsPageTranslations[language];
