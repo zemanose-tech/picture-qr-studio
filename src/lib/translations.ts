@@ -53,6 +53,64 @@ type PersonalDevelopmentTranslation = {
   cta: string;
 };
 
+type AcademicsTranslation = {
+  placeholderTitle: string;
+  placeholderSubtitle: string;
+  title: string;
+  description: string;
+  buttons: {
+    learnMore: string;
+    viewProfile: string;
+  };
+};
+
+type ProgramCardTranslation = {
+  title: string;
+  description: string;
+  duration: string;
+  age: string;
+  sports: string[];
+  highlight?: string;
+  features: string[];
+};
+
+type ProgramsTranslation = {
+  badge: string;
+  heading: {
+    prefix: string;
+    highlight: string;
+    suffix: string;
+  };
+  description: string;
+  cards: ProgramCardTranslation[];
+  labels: {
+    sports: string;
+    includes: string;
+  };
+  ctaButton: string;
+  bottomCta: {
+    heading: string;
+    description: string;
+    button: string;
+  };
+  inquiryPrefix: string;
+  customInquiryLabel: string;
+};
+
+type BoardingTranslation = {
+  title: string;
+  description: string;
+  cta: string;
+  carouselAltPrefix: string;
+};
+
+type ContactHelpTranslation = {
+  title: string;
+  consultationCta: string;
+  chatCta: string;
+  inquiryType: string;
+};
+
 type FooterTranslation = {
   tagline: string;
   description: string;
@@ -254,6 +312,174 @@ export const athleticsTranslations: TranslationMap<AthleticsTranslation> = {
   },
 };
 
+export const academicsTranslations: TranslationMap<AcademicsTranslation> = {
+  es: {
+    placeholderTitle: "Classroom Image Placeholder",
+    placeholderSubtitle: "(Students studying)",
+    title: "ACADÉMICOS",
+    description:
+      "Para que los estudiantes-atletas prosperen en las aulas universitarias del siglo 21 y más allá, deben estar equipados con un conjunto de habilidades que encarne los mandatos de un mundo cambiante. IMG Academy emplea las mejores prácticas que reflejan la investigación actual de aprendizaje efectivo a través de la integración estratégica de la alfabetización informacional y un plan de instrucción y currículum que dicta la inclusión de tareas de pensamiento complejo y riguroso.",
+    buttons: {
+      learnMore: "Saber Más",
+      viewProfile: "Ver Perfil Escolar",
+    },
+  },
+  en: {
+    placeholderTitle: "Classroom Image Placeholder",
+    placeholderSubtitle: "(Students studying)",
+    title: "ACADEMICS",
+    description:
+      "For student-athletes to thrive in 21st-century university classrooms and beyond, they must be equipped with a skill set that embodies the demands of a changing world. IMG Academy employs best practices that reflect current research on effective learning through the strategic integration of information literacy and an instructional plan that ensures the inclusion of rigorous, complex thinking tasks.",
+    buttons: {
+      learnMore: "Learn More",
+      viewProfile: "View School Profile",
+    },
+  },
+};
+
+export const programsTranslations: TranslationMap<ProgramsTranslation> = {
+  es: {
+    badge: "Programas Disponibles",
+    heading: {
+      prefix: "Encuentra tu",
+      highlight: "camino perfecto",
+      suffix: "",
+    },
+    description:
+      "Desde programas de internado completo hasta campamentos especializados, tenemos la opción perfecta para desarrollar tu potencial deportivo y académico.",
+    cards: [
+      {
+        title: "Programa de Internado",
+        description: "Combinación perfecta de excelencia académica y entrenamiento deportivo de élite",
+        duration: "Año completo",
+        age: "13-18 años",
+        sports: ["Tenis", "Golf", "Fútbol", "Baloncesto", "Béisbol"],
+        highlight: "Más popular",
+        features: [
+          "Alojamiento completo",
+          "Entrenamiento profesional",
+          "Educación universitaria preparatoria",
+        ],
+      },
+      {
+        title: "Campamentos de Verano",
+        description: "Experiencia intensiva de entrenamiento durante las vacaciones escolares",
+        duration: "1-4 semanas",
+        age: "8-18 años",
+        sports: ["Tenis", "Golf", "Fútbol", "Atletismo", "Natación"],
+        highlight: "Ideal para principiantes",
+        features: ["Flexible duración", "Todos los niveles", "Certificación internacional"],
+      },
+      {
+        title: "Academias Universitarias",
+        description: "Programa postgraduado para atletas de alto rendimiento",
+        duration: "1-2 años",
+        age: "18+ años",
+        sports: ["Tenis profesional", "Golf profesional", "Desarrollo fitness"],
+        highlight: "Nivel profesional",
+        features: ["Entrenamiento profesional", "Networking internacional", "Oportunidades de carrera"],
+      },
+    ],
+    labels: {
+      sports: "Deportes disponibles:",
+      includes: "Incluye:",
+    },
+    ctaButton: "Más información",
+    bottomCta: {
+      heading: "¿No estás seguro qué programa elegir?",
+      description:
+        "Nuestro equipo de admisiones en Latinoamérica te ayudará a encontrar el programa perfecto según tus objetivos deportivos, académicos y presupuesto.",
+      button: "Consulta personalizada gratuita",
+    },
+    inquiryPrefix: "Información sobre",
+    customInquiryLabel: "Consulta Personalizada",
+  },
+  en: {
+    badge: "Available Programs",
+    heading: {
+      prefix: "Find your",
+      highlight: "perfect path",
+      suffix: "",
+    },
+    description:
+      "From full boarding programmes to specialist camps, we have the ideal option to develop your athletic and academic potential.",
+    cards: [
+      {
+        title: "Boarding Program",
+        description: "The perfect blend of academic excellence and elite athletic training",
+        duration: "Full year",
+        age: "Ages 13-18",
+        sports: ["Tennis", "Golf", "Soccer", "Basketball", "Baseball"],
+        highlight: "Most popular",
+        features: ["Full accommodation", "Professional coaching", "College-prep academics"],
+      },
+      {
+        title: "Summer Camps",
+        description: "Intensive training experience during school holidays",
+        duration: "1-4 weeks",
+        age: "Ages 8-18",
+        sports: ["Tennis", "Golf", "Soccer", "Track & Field", "Swimming"],
+        highlight: "Ideal for beginners",
+        features: ["Flexible duration", "All skill levels", "International certification"],
+      },
+      {
+        title: "University Prep Academies",
+        description: "Postgraduate programme for high-performance athletes",
+        duration: "1-2 years",
+        age: "Ages 18+",
+        sports: ["Professional tennis", "Professional golf", "Performance training"],
+        highlight: "Professional level",
+        features: ["Professional coaching", "International networking", "Career opportunities"],
+      },
+    ],
+    labels: {
+      sports: "Sports available:",
+      includes: "Includes:",
+    },
+    ctaButton: "More information",
+    bottomCta: {
+      heading: "Not sure which program to choose?",
+      description:
+        "Our Latin America admissions team will help you find the perfect program based on your athletic, academic, and budget goals.",
+      button: "Free personalized consultation",
+    },
+    inquiryPrefix: "Information about",
+    customInquiryLabel: "Personalized Consultation",
+  },
+};
+
+export const boardingTranslations: TranslationMap<BoardingTranslation> = {
+  es: {
+    title: "BOARDING SCHOOL",
+    description:
+      "Ninguna escuela en el mundo puede igualar a IMG Academy en cuanto a su programación y experiencia que prepara intencionalmente a los estudiantes-atletas para el éxito universitario y la vida más allá.",
+    cta: "Saber Más",
+    carouselAltPrefix: "IMG Academy Internado",
+  },
+  en: {
+    title: "BOARDING SCHOOL",
+    description:
+      "No other school in the world matches IMG Academy's programming and experience designed to intentionally prepare student-athletes for college success and life beyond.",
+    cta: "Learn More",
+    carouselAltPrefix: "IMG Academy Boarding",
+  },
+};
+
+export const contactHelpTranslations: TranslationMap<ContactHelpTranslation> = {
+  es: {
+    title: "¿NECESITAS MÁS AYUDA?",
+    consultationCta: "SOLICITAR\nCONSULTA",
+    chatCta: "CHATEAR\nCON NOSOTROS",
+    inquiryType: "Contacto General",
+  },
+  en: {
+    title: "NEED MORE HELP?",
+    consultationCta: "REQUEST\nCONSULTATION",
+    chatCta: "CHAT\nWITH US",
+    inquiryType: "General Inquiry",
+  },
+};
+
 export const installationsTranslations: TranslationMap<InstallationsTranslation> = {
   es: {
     title: "INSTALACIONES DE CLASE MUNDIAL",
@@ -369,6 +595,18 @@ export const getAcademicExcellenceTranslation = (language: SupportedLanguage) =>
 
 export const getAthleticsTranslation = (language: SupportedLanguage) =>
   athleticsTranslations[language];
+
+export const getAcademicsTranslation = (language: SupportedLanguage) =>
+  academicsTranslations[language];
+
+export const getProgramsTranslation = (language: SupportedLanguage) =>
+  programsTranslations[language];
+
+export const getBoardingTranslation = (language: SupportedLanguage) =>
+  boardingTranslations[language];
+
+export const getContactHelpTranslation = (language: SupportedLanguage) =>
+  contactHelpTranslations[language];
 
 export const getInstallationsTranslation = (language: SupportedLanguage) =>
   installationsTranslations[language];
