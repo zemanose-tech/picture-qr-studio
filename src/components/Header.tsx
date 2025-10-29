@@ -46,7 +46,12 @@ const Header = () => {
           <button onClick={() => setIsModalOpen(true)} className="text-white hover:text-white/80 transition-colors">
             {t.contact}
           </button>
-          <Button variant="secondary" size="sm" onClick={toggleLanguage}>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={toggleLanguage}
+            className="text-white hover:text-white/80 hover:bg-white/10"
+          >
             {t.languageToggle}
           </Button>
 
@@ -81,10 +86,14 @@ const Header = () => {
           }} className="text-white hover:text-white/80 transition-colors text-left">
                 {t.contact}
               </button>
-              <Button variant="outline" onClick={() => {
+              <Button
+                variant="ghost"
+                className="text-white hover:text-white/80 hover:bg-white/10"
+                onClick={() => {
             toggleLanguage();
             setIsMenuOpen(false);
-          }}>
+          }}
+              >
                 {t.languageToggle}
               </Button>
 
