@@ -16,33 +16,36 @@ import Facilities from "./pages/Facilities";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/AboutUs";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/sports" element={<Sports />} />
-          <Route path="/sport/:sportId" element={<SportDetail />} />
-          <Route path="/adult-programs" element={<AdultPrograms />} />
-          
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/camps" element={<Camps />} />
-          <Route path="/boarding" element={<Boarding />} />
-          <Route path="/facilities" element={<Facilities />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <LanguageProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/sports" element={<Sports />} />
+            <Route path="/sport/:sportId" element={<SportDetail />} />
+            <Route path="/adult-programs" element={<AdultPrograms />} />
+
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/camps" element={<Camps />} />
+            <Route path="/boarding" element={<Boarding />} />
+            <Route path="/facilities" element={<Facilities />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </LanguageProvider>
   </QueryClientProvider>
 );
 
