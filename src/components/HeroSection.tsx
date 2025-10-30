@@ -2,7 +2,11 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import logoWhite from "@/assets/img-logo-white.png";
+import { useLanguage } from "@/hooks/use-language";
+import { getHeroTranslation } from "@/lib/translations";
 const HeroSection = () => {
+  const { language } = useLanguage();
+  const heroCopy = getHeroTranslation(language);
   const plugin = useRef(Autoplay({
     delay: 4000,
     stopOnInteraction: false,
@@ -38,7 +42,7 @@ const HeroSection = () => {
         {/* Static Text and Logo Overlay */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none px-4">
           <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-center">
-            Bienvenidos a
+            {heroCopy.welcome}
           </h1>
           <img src={logoWhite} alt="IMG Academy Logo" className="h-12 sm:h-14 md:h-16 w-auto" />
         </div>
@@ -55,32 +59,38 @@ const HeroSection = () => {
       <div className="px-4 sm:px-6 pb-12 sm:pb-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6 sm:mb-8">
         <br />
-          ¡CON IMG<br />
-          TRANSFORMA <br />
-          TU POTENCIAL!
+          {heroCopy.transformTitleLines.map((line, index) => (
+            <span key={`${line}-${index}`}>
+              {line}
+              {index !== heroCopy.transformTitleLines.length - 1 && <br />}
+            </span>
+          ))}
         </h2>
-        <p className="text-base sm:text-lg leading-relaxed">En IMG Academy, reunimos a estudiantes-atletas apasionados con entrenadores y profesores de clase mundial, creando un entorno único donde el talento se transforma en resultados.
-
-Aquí, cada meta cuenta y cada logro se apoya con una atención personalizada, gracias a nuestra proporción de 4 miembros del personal por cada estudiante.</p>
+        <p className="text-base sm:text-lg leading-relaxed">
+          {heroCopy.descriptionSegments.map((segment, index) => (
+            <span key={`hero-description-${index}`}>
+              {segment}
+              {index !== heroCopy.descriptionSegments.length - 1 && (
+                <>
+                  <br />
+                  <br />
+                </>
+              )}
+            </span>
+          ))}
+        </p>
       </div>
 
       {/* Statistics Section */}
       <div className="bg-gray-100 text-primary px-4 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 md:gap-8 auto-rows-fr">
-          {[
-            { n: '31.000', t: 'estudiantes-atletas de IMG Academy y NCSA que ingresan a universidades cada año' },
-            { n: '25',  t: '% de los equipos universitarios de primer año cuentan con atletas de IMG Academy y NCSA' },
-            { n: '78', t: '% de los programas universitarios y más de 40.000 entrenadores reclutan a través de NCSA' },
-            { n: '150',   t: 'estudiantes de IMG Academy seleccionados por ligas profesionales en los últimos 10 años' },
-            { n: '300',  t: 'compromisos universitarios de atletas de IMG Academy para la promoción 2025' },
-            { n: '100',  t: '% tasa de graduación de IMG Academy' },
-          ].map((s, i) => (
+          {heroCopy.statistics.map((stat, i) => (
             <div key={i} className="h-full flex flex-col items-center justify-center text-center px-2">
               <div className="text-3xl sm:text-4xl md:text-5xl font-bold leading-none mb-1">
-                {s.n}
+                {stat.value}
               </div>
               <p className="text-[11px] sm:text-xs leading-snug max-w-[18ch] sm:max-w-none">
-                {s.t}
+                {stat.description}
               </p>
             </div>
           ))}

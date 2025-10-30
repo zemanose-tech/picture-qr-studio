@@ -47,17 +47,11 @@ const AutoScrollCarousel = ({
               className="basis-full sm:basis-auto flex-shrink-0"
             >
               {/* Mobile gets a safe aspect ratio to avoid zoom; from sm: we use your heights */}
-              <div className={`w-full aspect-[4/3] sm:aspect-auto ${height}`}>
+              <div className={`w-full overflow-hidden aspect-[4/3] sm:aspect-auto ${height}`}>
                 <img
                   src={image.image}
                   alt={image.alt || `Image ${image.id}`}
-                  className="
-                    w-full h-full
-                    object-contain          /* ✅ keep full image visible on phones */
-                    sm:object-cover         /* ✅ fill nicely on larger screens */
-                    filter brightness-95 saturate-100 contrast-105
-                    transition-transform duration-500 ease-in-out
-                  "
+                  className="carousel-image"
                   loading="lazy"
                 />
               </div>

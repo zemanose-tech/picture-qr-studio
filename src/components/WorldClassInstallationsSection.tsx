@@ -1,12 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AutoScrollCarousel from "@/components/AutoScrollCarousel";
+import { useLanguage } from "@/hooks/use-language";
+import { getInstallationsTranslation } from "@/lib/translations";
 
 const WorldClassInstallationsSection = () => {
+  const { language } = useLanguage();
+  const installationsCopy = getInstallationsTranslation(language);
   const instalacionesImages = Array.from({ length: 18 }, (_, i) => ({
     id: i + 1,
     image: `/carousel_images/instalaciones_carousel/${i + 1}.jpg`,
-    alt: `Instalaciones IMG Academy ${i + 1}`
+    alt: `${installationsCopy.carouselAltPrefix} ${i + 1}`,
   }));
 
   return (
@@ -15,14 +19,14 @@ const WorldClassInstallationsSection = () => {
         <AutoScrollCarousel images={instalacionesImages} height="h-80" />
       </div>
 
-      <h2 className="text-4xl font-bold text-primary mb-8">INSTALACIONES DE CLASE MUNDIAL</h2>
-      
+      <h2 className="text-4xl font-bold text-primary mb-8">{installationsCopy.title}</h2>
+
       <p className="text-foreground text-lg leading-relaxed mb-8">
-        Nuestras instalaciones deportivas y académicas están diseñadas para inspirar la excelencia. Con más de 600 acres de campus, ofrecemos las mejores facilidades deportivas del mundo, desde campos profesionales hasta centros de alto rendimiento equipados con la tecnología más avanzada para el desarrollo atlético integral.
+        {installationsCopy.description}
       </p>
 
       <Button asChild>
-        <Link to="/facilities">Saber Más</Link>
+        <Link to="/facilities">{installationsCopy.cta}</Link>
       </Button>
     </section>
   );

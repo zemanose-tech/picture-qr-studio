@@ -7,7 +7,11 @@ import SportsCarouselSection from "@/components/SportsCarouselSection";
 import LoyaltyBenefitsSection from "@/components/LoyaltyBenefitsSection";
 import GroupBenefitsSection from "@/components/GroupBenefitsSection";
 import AutoScrollCarousel from "@/components/AutoScrollCarousel";
+import { useLanguage } from "@/hooks/use-language";
+import { getCampsPageTranslation } from "@/lib/translations";
 const Camps = () => {
+  const { language } = useLanguage();
+  const campsCopy = getCampsPageTranslation(language);
   const campsCarouselImages = Array.from({ length: 12 }, (_, i) => ({
     id: i + 1,
     image: `/carousel_images/camps_carousel/${i + 1}.${i === 0 || i === 9 ? 'JPG' : 'jpg'}`,
@@ -21,10 +25,10 @@ const Camps = () => {
         <section className="bg-primary text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Campamentos <br />
-              IMG Academy
+              {campsCopy.heroTitle[0]} <br />
+              {campsCopy.heroTitle[1]}
             </h1>
-            
+
           </div>
         </section>
 

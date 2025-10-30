@@ -103,3 +103,17 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .carousel-image {
+    @apply block h-full w-full object-contain sm:object-cover object-center transition-transform duration-500 ease-in-out;
+  }
+}
+
+@layer utilities {
+  @supports not (-webkit-touch-callout: none) {
+    .carousel-image {
+      filter: brightness(0.95) saturate(1) contrast(1.05);
+    }
+  }
+}
