@@ -103,3 +103,11 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @supports (-webkit-touch-callout: none) {
+    .safari-filter-reset {
+      filter: none !important;
+    }
+  }
+}
