@@ -51,14 +51,7 @@ const AutoScrollCarousel = ({
                 <img
                   src={image.image}
                   alt={image.alt || `Image ${image.id}`}
-                  className="
-                    block h-full w-full
-                    object-contain          /* ✅ keep full image visible on phones */
-                    sm:object-cover         /* ✅ fill nicely on larger screens */
-                    object-center           /* ✅ avoid unexpected Safari cropping */
-                    filter brightness-95 saturate-100 contrast-105 safari-filter-reset
-                    transition-transform duration-500 ease-in-out
-                  "
+                  className="carousel-image"
                   loading="lazy"
                 />
               </div>
